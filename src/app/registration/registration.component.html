@@ -1,1 +1,67 @@
-<p>registration works!</p>
+<section class="h-100" style="background-color: #8fc4b7;">
+    <div class="container py-2">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block mt-5">
+                <img src="../../assets/img4.jpg" height="80%"/>
+              </div>
+
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" > 
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5 text-uppercase">Registration Form</h3>
+  
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="FirstName" id="form3Example1m" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example1m">First name</label>
+                        <div *ngIF="submitted || registerForm.get('FirstName')?.invalid && (registerForm.get('FirstName')?.dirty || registerForm.get('FirstName')?.touched)">
+                            <div *ngIf="registerForm.get('FirstName')?.hasError('required')"></div>
+                            <div class=""><span class="text-danger">Password is required</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="LastName"  id="form3Example1n" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example1n">Last name</label>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="row">
+                    
+                  </div>
+  
+                                    
+                  <div class="form-outline mb-4">
+                    <input type="number" formControlName="phone" id="form3Example99" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example99">Phone Number</label>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="text" formControlName="email" id="form3Example97" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example97">Email ID</label>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="password" formControlName="pass" id="form3Example97" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example97">Password</label>
+                  </div>
+  
+                  <div>
+                    <button type="submit" class="btn btn-warning btn-lg ms-2">Submit form</button>
+                  </div>
+  
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+  </section>
