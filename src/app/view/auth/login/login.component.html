@@ -13,12 +13,12 @@
                 </div>
   
                 <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                  <div class="card-body p-4 p-lg-5 text-black">
+                  <div class="card-body p-4 text-black">
                       <!--Lock Icon-->
                     <div class="lock-icon">
                        <fa-icon [icon]="faLock" class="fa-2x mt-1"></fa-icon>
                     </div>
-                    <div>
+                    <div >
                     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                       <div class="heading-text">
                       <h3>Sign into your account</h3>
@@ -26,12 +26,12 @@
   
                      <div class="textfield">
                       <div class="form-outline mb-4">
-                        <input type="number" formControlName="mobile" [ngClass]="{'is-invalid':submitted && loginForm.get('mobile')?.errors}" placeholder="Mobile" class="form-control form-control-lg" />
-                        <div *ngIf=" submitted || loginForm.get('mobile')?.invalid && (loginForm.get('mobile')?.dirty || loginForm.get('mobile')?.touched)">
-                          <div *ngIf="loginForm.get('mobile')?.hasError('required')">
+                        <input type="text" formControlName="email" [ngClass]="{'is-invalid':submitted && loginForm.get('email')?.errors}" placeholder="Email" class="form-control form-control-lg" />
+                        <div *ngIf=" submitted || loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+                          <div *ngIf="loginForm.get('email')?.hasError('required')">
                            <div class="errormsg"><span class="text-danger">Email is required</span></div>
                           </div>
-                          <div *ngIf="loginForm.get('mobile')?.hasError('pattern')">
+                          <div *ngIf="loginForm.get('email')?.hasError('pattern')">
                            <div class="errormsg"><span class="text-danger">Enter valid email</span></div>
                           </div>
                           
@@ -62,7 +62,7 @@
                     </div>
   
                     <div class="bottom-text">
-                     <p >Don't have an account? <a routerLink="register">Register here</a></p>
+                     <p >Don't have an account? <a routerLink="../register">Register here</a></p>
                     </div>  
                     </form>
                   </div>
@@ -74,6 +74,8 @@
             </div>
           </div>
         
+
+          
       
     </section>
   

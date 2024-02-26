@@ -1,0 +1,16 @@
+.modal-header {
+background-color: #e1aa52;
+justify-content: center;
+}
+.modal-footer{
+    background-color: #e1aa52;
+    height:4rem;
+    margin-top:-1rem;
+}
+.modal-footer button{
+    margin-left:22rem;
+    width:10rem;
+}
+.checkboxxx{
+    margin-left:10rem;
+}

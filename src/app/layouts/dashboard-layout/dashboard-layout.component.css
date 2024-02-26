@@ -1,0 +1,11 @@
+.routerOutlet {
+  float: left;
+  overflow-y: auto;
+  height: 100vh;
+}
+.maxwidth{
+  width: 95vw;
+}
+.minwidth{
+  width: 86.5vw;
+}

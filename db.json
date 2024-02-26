@@ -1,0 +1,452 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "employee": [
+    {
+      "id": "aead",
+      "name": "Rohit",
+      "role": "1",
+      "empId": "2",
+      "gender": "male",
+      "date": "2002-02-28",
+      "blood": "1",
+      "email": "rohit@gmail.com",
+      "mobile": 9730023006,
+      "age": 23,
+      "password": "rohit@123",
+      "CurrentAddress": "Pimple Nilkha",
+      "PermanentAddress": "Pimple Nilkha",
+      "country": "1",
+      "state": "1",
+      "city": "1",
+      "AddharNumber": 121212121212,
+      "file": "C:\\fakepath\\image1.jpg"
+    },
+    {
+      "id": "f247",
+      "name": "Pawar",
+      "role": "Web Developer",
+      "empId": "233",
+      "gender": "female",
+      "date": "4552-03-22",
+      "blood": "B+ve",
+      "email": "pawar@gmail.com",
+      "mobile": 9090909090,
+      "age": 23,
+      "password": "98",
+      "CurrentAddress": "cscf",
+      "PermanentAddress": "pimple",
+      "country": "India",
+      "state": "Maharastra",
+      "city": "Pune",
+      "AddharNumber": 12,
+      "file": "C:\\fakepath\\maxresdefault.jpg"
+    },
+    {
+      "id": "d1f0",
+      "name": "Rohit Pawar",
+      "role": "Back-end developer",
+      "empId": "3213",
+      "gender": "female",
+      "date": "2452-12-31",
+      "blood": "A-ve",
+      "email": "sfs@sw",
+      "mobile": 1324567654322345,
+      "age": 23,
+      "password": "csffs",
+      "CurrentAddress": "asdscvs",
+      "PermanentAddress": "scsv",
+      "country": "USA",
+      "state": "Karnatak",
+      "city": "Mumbai",
+      "AddharNumber": 2123456,
+      "file": "C:\\fakepath\\image1.jpg"
+    },
+    {
+      "id": "890b",
+      "name": "ddgd",
+      "role": "Desktop Support Manager",
+      "empId": "12",
+      "gender": "male",
+      "date": "5447-03-24",
+      "blood": "B-ve",
+      "email": "aea@dsfs",
+      "mobile": 1234,
+      "age": 24,
+      "password": "xcszdzs",
+      "CurrentAddress": "sfdvgdvg",
+      "PermanentAddress": "cvsvs",
+      "country": "USA",
+      "state": "Maharastra",
+      "city": "Mumbai",
+      "AddharNumber": 3243,
+      "file": "C:\\fakepath\\wafersmenu - Copy.jpeg"
+    },
+    {
+      "id": "87d3",
+      "name": "ABc",
+      "role": "Back-end developer",
+      "empId": "10",
+      "gender": "other",
+      "date": "1010-01-11",
+      "blood": "AB-ve",
+      "email": "ajdnkj@g",
+      "mobile": 10,
+      "age": 11,
+      "password": "10",
+      "CurrentAddress": "nks",
+      "PermanentAddress": "m km",
+      "country": "India",
+      "state": "Karnatak",
+      "city": "Mumbai",
+      "AddharNumber": 12,
+      "file": "C:\\fakepath\\IMG_1314.jpg"
+    },
+    {
+      "id": "d310",
+      "name": "Demo",
+      "role": "Database administrator",
+      "empId": "23",
+      "gender": "male",
+      "date": "0002-02-02",
+      "blood": "A-ve",
+      "email": "rohti@g",
+      "mobile": 1234567890,
+      "age": 22,
+      "password": "rohit2",
+      "CurrentAddress": "mmds",
+      "PermanentAddress": " mdmd",
+      "country": "USA",
+      "state": "Karnatak",
+      "city": "Pune",
+      "AddharNumber": 122,
+      "file": "C:\\fakepath\\image1.jpg"
+    },
+    {
+      "id": "a558",
+      "name": "test",
+      "role": "Desktop Support Manager",
+      "empId": "3",
+      "gender": "other",
+      "date": "0232-04-13",
+      "blood": "O+ve",
+      "email": "dad@addf",
+      "mobile": 2,
+      "age": 2,
+      "password": "csfa",
+      "CurrentAddress": "adsfs",
+      "PermanentAddress": "aafca",
+      "country": "USA",
+      "state": "Karnatak",
+      "city": "Pune",
+      "AddharNumber": 21,
+      "file": "C:\\fakepath\\IMG_1310.jpg"
+    },
+    {
+      "id": "624b",
+      "name": "maaa",
+      "role": "Junior Software Engineer",
+      "empId": "dscs",
+      "gender": "female",
+      "date": "2002-04-28",
+      "blood": "B-ve",
+      "email": "sfsrw@ree",
+      "mobile": 3,
+      "age": 31,
+      "password": "sfs",
+      "CurrentAddress": "fsff",
+      "PermanentAddress": "ssf",
+      "country": "USA",
+      "state": "Maharastra",
+      "city": "Pune",
+      "AddharNumber": 223,
+      "file": "C:\\fakepath\\IMG_1272-fotor-bg-remover-20230914205830.png"
+    },
+    {
+      "id": "600e",
+      "name": "Rohit Pawar ",
+      "role": "Web Developer",
+      "empId": "12",
+      "gender": "male",
+      "date": "2002-02-20",
+      "blood": "A+ve",
+      "email": "rohit2822002@gmail.com",
+      "mobile": 9730023006,
+      "age": 23,
+      "password": "rohit@",
+      "CurrentAddress": "pimple nilkha",
+      "PermanentAddress": "pimple nilkha",
+      "country": "India",
+      "state": "Karnatak",
+      "city": "Pune",
+      "AddharNumber": 1234,
+      "file": "C:\\fakepath\\download-removebg-preview-fotor-bg-remover-20230914215452_auto_x2.jpg"
+    },
+    {
+      "id": "e08a",
+      "name": "Suraj Kolhe",
+      "role": "Product manager",
+      "empId": "11",
+      "gender": "male",
+      "date": "2000-04-29",
+      "blood": "A-ve",
+      "email": "suraj@gmail.com",
+      "mobile": 9090909090,
+      "age": 23,
+      "password": "suraj",
+      "CurrentAddress": "Audha",
+      "PermanentAddress": "Audha",
+      "country": "1",
+      "state": "2",
+      "city": "Bengaluru",
+      "AddharNumber": 2301010303920,
+      "file": "C:\\fakepath\\Authentic.png"
+    },
+    {
+      "id": "572b",
+      "name": "suraj",
+      "role": "Database administrator",
+      "empId": "21",
+      "gender": "female",
+      "date": "2220-02-28",
+      "blood": "B+ve",
+      "email": "suraj@d",
+      "mobile": 3,
+      "age": 23,
+      "password": "s",
+      "CurrentAddress": "we",
+      "PermanentAddress": "are",
+      "country": "3",
+      "state": "9",
+      "city": "Taal",
+      "AddharNumber": 0,
+      "file": "C:\\fakepath\\authentic-papad-logo-modified.png"
+    },
+    {
+      "id": "dac4",
+      "name": "xx",
+      "role": "Desktop Support Manager",
+      "empId": "2",
+      "gender": "other",
+      "date": "2222-02-02",
+      "blood": "AB+ve",
+      "email": "sfsf@d",
+      "mobile": 23,
+      "age": 3,
+      "password": "sf",
+      "CurrentAddress": "ssdf",
+      "PermanentAddress": "sdssf",
+      "country": "2",
+      "state": "6",
+      "city": "Honolulu",
+      "AddharNumber": 213,
+      "file": "C:\\fakepath\\DSCF2304.JPG"
+    }
+  ],
+  "signupUsers": [
+    {
+      "id": "14b2",
+      "name": "Rohit",
+      "mobile": 9730023006,
+      "email": "rohit@gmail.com",
+      "password": "Rohit@123",
+      "confirmPass": "Rohit@123"
+    },
+    {
+      "id": "6b9e",
+      "name": "Suraj",
+      "mobile": 9823174875,
+      "email": "suraj@gmail.com",
+      "password": "Suraj@",
+      "confirmPass": "Suraj@"
+    },
+    {
+      "id": "aa1f",
+      "name": "Pawar",
+      "mobile": 1010101010,
+      "email": "pawar@gmail.com",
+      "password": "Pawar@345",
+      "confirmPass": "Pawar@345"
+    }
+  ],
+  "country": [
+    {
+      "id": 1,
+      "name": "India"
+    },
+    {
+      "id": 2,
+      "name": "USA"
+    },
+    {
+      "id": 3,
+      "name": "Philippines"
+    }
+  ],
+  "state": [
+    {
+      "id": 1,
+      "name": "Maharasthra",
+      "state_id": 1
+    },
+    {
+      "id": 1,
+      "name": "Karnataka",
+      "state_id": 2
+    },
+    {
+      "id": 1,
+      "name": "Tamil Nadu",
+      "state_id": 3
+    },
+    {
+      "id": 1,
+      "name": "Kerala",
+      "state_id": 4
+    },
+    {
+      "id": 2,
+      "name": "California",
+      "state_id": 5
+    },
+    {
+      "id": 2,
+      "name": "Hawaii",
+      "state_id": 6
+    },
+    {
+      "id": 2,
+      "name": "Florida",
+      "state_id": 7
+    },
+    {
+      "id": 3,
+      "name": "Aklan",
+      "state_id": 8
+    },
+    {
+      "id": 3,
+      "name": "Batangas",
+      "state_id": 9
+    }
+  ],
+  "city": [
+    {
+      "id": 1,
+      "name": "Pune",
+      "state_id": 1
+    },
+    {
+      "id": 1,
+      "name": "Mumbai",
+      "state_id": 1
+    },
+    {
+      "id": 1,
+      "name": "Nashik",
+      "state_id": 1
+    },
+    {
+      "id": 1,
+      "name": "Bengaluru",
+      "state_id": 2
+    },
+    {
+      "id": 1,
+      "name": "Davanagere",
+      "state_id": 2
+    },
+    {
+      "id": 1,
+      "name": "Hubballi",
+      "state_id": 2
+    },
+    {
+      "id": 1,
+      "name": "Rajapalayam",
+      "state_id": 3
+    },
+    {
+      "id": 1,
+      "name": "Chennai",
+      "state_id": 3
+    },
+    {
+      "id": 1,
+      "name": "Kochi",
+      "state_id": 4
+    },
+    {
+      "id": 1,
+      "name": "Thiruvananthapuram",
+      "state_id": 4
+    },
+    {
+      "id": 2,
+      "name": "Los Angeles",
+      "state_id": 5
+    },
+    {
+      "id": 2,
+      "name": "San Francisco",
+      "state_id": 5
+    },
+    {
+      "id": 3,
+      "name": "Honolulu",
+      "state_id": 6
+    },
+    {
+      "id": 3,
+      "name": "Orlando",
+      "state_id": 7
+    },
+    {
+      "id": 3,
+      "name": "Lezo",
+      "state_id": 8
+    },
+    {
+      "id": 3,
+      "name": "Malay",
+      "state_id": 8
+    },
+    {
+      "id": 3,
+      "name": "Taal Lake",
+      "state_id": 9
+    },
+    {
+      "id": 3,
+      "name": "Talisay",
+      "state_id": 9
+    },
+    {
+      "id": 2,
+      "name": "Taal",
+      "state_id": 9
+    }
+  ]
+}

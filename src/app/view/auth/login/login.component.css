@@ -4,6 +4,7 @@
 .container{
     padding:2rem ;
 }
+
 .heading-text{
     margin-top:1rem;
     margin-left:5.2rem;
@@ -22,9 +23,8 @@
 }
 .eye{
   position: absolute;
-  position: fixed;
-  top:54.2%;
-  left:63rem;
+  bottom : 13.5rem;
+  left:51rem;
   cursor: pointer;
   transform: scale(1.2);
 }

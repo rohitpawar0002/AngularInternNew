@@ -1,0 +1,223 @@
+<div class="container">
+   <div class="modal-header mt-n1 ">
+    <h3>Add Employee</h3>
+  </div>
+  <div class="modal-body mt-n2"> 
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+    <div class="row mt-4">
+      <div class="col col-lg-4">
+        <div data-mdb-input-init class="form-outline">
+          <input type="text" placeholder="Employee Name"  formControlName="name" [ngClass]="{'is-invalid':submitted && employeeForm.get('name')?.errors}" class="form-control" />
+          <div *ngIf="submitted || employeeForm.get('name')?.invalid && (employeeForm.get('name')?.dirty || employeeForm.get('name')?.touched)">
+            <div *ngIf="employeeForm.get('name')?.hasError('required')">
+            <!-- <p class="text-danger">Enter Name</p> -->
+         </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-lg-4">
+        <select class="form-select" formControlName="role" [ngClass]="{'is-invalid':submitted && employeeForm.get('role')?.errors}" aria-label="Default select example">
+            <option value="">Select Role</option>
+            <option value="Junior Software Engineer">Junior Software Engineer</option>
+            <option value="Desktop Support Manager">Desktop Support Manager</option>
+            <option value="Web Developer">Web Developer</option>
+            <option value="Database administrator">Database administrator</option>
+            <option value="Back-end developer">Back-end developer</option>
+            <option value="Product manager">Product manager</option>
+            <option value="HR Manager">HR Manager</option>
+          </select>
+      </div> 
+       <div class="col col-lg-4">
+        <div data-mdb-input-init class="form-outline">
+          <input type="text" formControlName="empId" [ngClass]="{'is-invalid':submitted && employeeForm.get('empId')?.errors}"  placeholder="Employee ID" class="form-control" />
+          <div *ngIf="submitted || employeeForm.get('empId')?.invalid && (employeeForm.get('empId')?.dirty || employeeForm.get('empId')?.touched)">
+            <div *ngIf="employeeForm.get('empId')?.hasError('required')">
+                <!-- <p class="text-danger">Enter Employee Id</p> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+ <div class="row mt-4">
+     <div class="col col-lg-4">
+    <div class="d-flex">
+          <!-- check radio male -->
+ <div class="form-check mx-1">
+    <input class="form-check-input" formControlName="gender"  type="radio" name="gender" value="male" />
+    <label class="form-check-label" for="flexRadioDefault1">Male</label>
+  </div>  
+  <!-- checked radio Female -->
+  <div class="form-check mx-1">
+    <input class="form-check-input" formControlName="gender" type="radio" name="gender" value="female" />
+    <label class="form-check-label" for="flexRadioDefault2">Female</label>
+  </div>
+  <!-- checked radio other -->
+    <div class="form-check mx-1">
+    <input class="form-check-input" type="radio" formControlName="gender" name="gender" value="other"/>
+    <label class="form-check-label" for="flexRadioDefault2">Other</label>
+  </div> 
+  
+</div>
+        </div>
+        <div class="col col-lg-4">
+          <input type="date" formControlName="date" [ngClass]="{'is-invalid':submitted && employeeForm.get('date')?.errors}" class="form-control" >
+          <div *ngIf="submitted || employeeForm.get('date')?.invalid && (employeeForm.get('date')?.dirty || employeeForm.get('date')?.touched)">
+            <div *ngIf="employeeForm.get('date')?.hasError('required')"> 
+                <!-- <p class="text-danger">Date Required</p> -->
+            </div>
+          </div>
+        </div>
+
+
+         <div class="col col-lg-4">
+          <div data-mdb-input-init class="form-outline">
+            <input type="number" formControlName="age" [ngClass]="{'is-invalid':submitted && employeeForm.get('age')?.errors}" id="form3Example2" placeholder="Age" class="form-control" />
+            <div *ngIf="submitted || employeeForm.get('age')?.invalid && (employeeForm.get('age')?.dirty || employeeForm.get('age')?.touched)">
+                <div *ngIf="employeeForm.get('age')?.hasError('required')"> 
+                    <!-- <-- <p class="text-danger">Date Required</p> --> 
+                 </div>
+              </div>
+          </div>
+        </div>
+      </div> 
+
+
+       <div class="row mt-4">
+        <div class="col col-lg-4">
+            <select class="form-select" formControlName="blood" [ngClass]="{'is-invalid':submitted && employeeForm.get('blood')?.errors}" aria-label="Default select example">
+                <option value="">Blood Group</option>
+                <option value="A+ve">A+ve</option>
+                <option value="A-ve">A-ve</option>
+                <option value="B+ve">B+ve</option>
+                <option value="B-ve">B-ve</option>
+                <option value="O+ve">O+ve</option>
+                <option value="O-ve">O-ve</option>
+                <option value="AB+ve">AB+ve</option>
+                <option value="AB-ve">AB-ve</option>             
+              </select>
+       </div>    
+      
+        <div class="col col-lg-4">
+            <div data-mdb-input-init class="form-outline">
+                <input type="email" formControlName="email" [ngClass]="{'is-invalid':submitted && employeeForm.get('email')?.errors}" placeholder="Email" class="form-control" />
+                <div *ngIf="submitted || employeeForm.get('email')?.invalid && (employeeForm.get('email')?.dirty || employeeForm.get('email')?.touched)">
+                    <div *ngIf="employeeForm.get('email')?.hasError('required')">
+                        <!-- <p class="text-danger">Email Required</p> -->
+                    </div>
+                    <div *ngIf="employeeForm.get('email')?.hasError('email')"> 
+                        <!-- <p class="text-danger">Enter Valid Email</p> -->
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+         <div class="col col-lg-4">
+            <div data-mdb-input-init class="form-outline">
+                <input type="number" formControlName="mobile" [ngClass]="{'is-invalid':submitted && employeeForm.get('mobile')?.errors}" placeholder="Mobile Number" class="form-control" />
+                <div *ngIf="submitted || employeeForm.get('mobile')?.invalid && (employeeForm.get('mobile')?.dirty || employeeForm.get('mobile')?.touched)">
+                    <div *ngIf="employeeForm.get('mobile')?.hasError('required')">
+                        <!-- <p class="text-danger">Enter Mobile</p> -->
+                  </div>
+                  </div>
+            </div>
+        </div>
+    </div> 
+
+     <div class="row mt-4">
+        <div class="col col-lg-4">
+            <div data-mdb-input-init class="form-outline">
+                <input type="password" formControlName="password" [ngClass]="{'is-invalid':submitted && employeeForm.get('password')?.errors}" placeholder="Password" class="form-control" />
+                <div *ngIf="submitted || employeeForm.get('password')?.invalid && (employeeForm.get('password')?.dirty || employeeForm.get('password')?.touched)">
+                    <div *ngIf="employeeForm.get('password')?.hasError('required')">
+                        <!-- <p class="text-danger">Enter Password</p> -->
+                     </div>
+                  </div>
+            </div>
+        </div>     
+     
+        <div class="col col-lg-4">
+            <div data-mdb-input-init class="form-outline">
+              <input class="checkboxxx" type="checkbox" [(ngModel)]="copyEnabled"> Same Address
+                <textarea class="form-control" formControlName="CurrentAddress" [ngClass]="{'is-invalid':submitted && employeeForm.get('CurrentAddress')?.errors}" placeholder="Enter Current Address" rows="3"></textarea>
+                <div *ngIf="submitted || employeeForm.get('CurrentAddress')?.invalid && (employeeForm.get('CurrentAddress')?.dirty || employeeForm.get('CurrentAddress')?.touched)">
+                    <div *ngIf="employeeForm.get('CurrentAddress')?.hasError('required')">
+                        <!-- <p class="text-danger">Enter Current Address</p> -->
+                    </div>
+                  </div>
+            </div>
+        </div>       
+
+         <div class="col col-lg-4">
+            <div data-mdb-input-init class="form-outline">
+                <textarea class="form-control" [(ngModel)]="PermanatText" formControlName="PermanentAddress" placeholder="Enter Permanent Address" [ngClass]="{'is-invalid':submitted && employeeForm.get('PermanentAddress')?.errors}" rows="3"></textarea>
+                <div *ngIf="submitted || employeeForm.get('PermanentAddress')?.invalid && (employeeForm.get('PermanentAddress')?.dirty || employeeForm.get('PermanentAddress')?.touched)">
+                    <div *ngIf="employeeForm.get('PermanentAddress')?.hasError('required')"> 
+                        <!-- <p class="text-danger">Enter Permanent Address</p> -->
+                     </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="row mt-4">
+               <div class="col col-lg-4">
+          <select class="form-select" (change)="OnSelectCountry($event)" formControlName="country" [ngClass]="{'is-invalid':submitted && employeeForm.get('country')?.errors}" aria-label="Default select example">
+              <option value="">Select Country</option>
+              <option *ngFor="let item of displayArr" value="{{item.id}}">{{item.name}}</option>
+
+            </select>
+        </div>
+        <div class="col col-lg-4">
+          <div data-mdb-input-init class="form-outline">
+            <select class="form-select" (change)="OnSelectState($event)" formControlName="state" [ngClass]="{'is-invalid':submitted && employeeForm.get('state')?.errors}" aria-label="Default select example">
+                <option value="">Select State</option>
+                <option *ngFor="let item of stateArrr" value="{{item.state_id}}">{{item.name}}</option>
+            
+
+              </select>
+           </div>
+        </div>
+        <div class="col col-lg-4">
+            <div data-mdb-input-init class="form-outline">
+                <select class="form-select" formControlName="city" [ngClass]="{'is-invalid':submitted && employeeForm.get('city')?.errors}" aria-label="Default select example">
+                    <option value="">Select City</option>
+                    <option *ngFor="let item of cityArr">{{item.name}}</option>
+
+                  </select>      
+                      </div> 
+          </div>
+
+      </div> 
+
+       <div class="row mt-4">
+        <div class="col col-lg-4">
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="number" [ngClass]="{'is-invalid':submitted && employeeForm.get('AddharNumber')?.errors}"  formControlName="AddharNumber" placeholder="Addhar Number" class="form-control" />
+        <div *ngIf="submitted || employeeForm.get('AddharNumber')?.invalid && (employeeForm.get('AddharNumber')?.dirty || employeeForm.get('AddharNumber')?.touched)">
+          <div *ngIf="employeeForm.get('AddharNumber')?.hasError('required')"> 
+                <!-- <p class="text-danger">Enter Addhar Number</p> -->
+             </div>
+          </div>
+      </div>
+        </div>
+
+        <div class="col col-lg-4">
+    <input type="file" formControlName="file"  [ngClass]="{'is-invalid':submitted && employeeForm.get('file')?.errors}" class="form-control" id="customFile" />
+        </div>
+      </div>
+          
+  
+    <!-- Submit button -->
+     <div class="modal-footer">
+    <button type="submit" class="btn btn-outline-info mb-4">Add Employee</button>
+    <button type="button" class="btn btn-outline-danger mb-4 mx-2" (click)="close()">Close</button>
+    </div>
+  
+   
+   </form>
+  </div>
+</div> 
+

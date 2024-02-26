@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {faLock} from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import { HttpSignupService } from 'src/app/Services/http-signup.service';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   faLock = faLock;
+
+  username:any[]=[];
 
   loginForm!:FormGroup;
   submitted = false;
@@ -20,11 +23,11 @@ export class LoginComponent {
   isText: boolean = false;
   eyeIcon: string = 'fa-eye-slash';
 
-  constructor(private formBuilder: FormBuilder,private router:Router){}
+  constructor(private formBuilder: FormBuilder,private router:Router,private signUpService:HttpSignupService){}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      mobile: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      email: ['', [Validators.required, Validators.email]],
       password: [
         '',
         [
@@ -49,6 +52,25 @@ export class LoginComponent {
     if (this.loginForm.invalid) {
       return;
     }
-
+   
+    this.signUpService.getSignup().subscribe({
+      next:((resp:any)=>{
+        const user=resp.find((a:any)=>{
+          return a.email===this.loginForm.value.email && a.password===this.loginForm.value.password
+        });
+        if(user){
+          alert("Login Successful");
+          this.loginForm.reset();          
+          this.router.navigate(['../../dashboard'])
+        }
+        else{
+          alert("User Not Found")
+        }
+      }),
+      error:(err=>{
+        alert('Something Was Wrong');
+      })
+    })
 }
+
 }

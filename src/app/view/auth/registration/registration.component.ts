@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import { HttpSignupService } from 'src/app/Services/http-signup.service';
 
 @Component({
   selector: 'app-registration',
@@ -9,11 +10,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
+signUpJson:any[]=[];
+
+  registerArr:any[]=[];
+  registerObj:any={
+    name:'',
+    mobile:'',
+    email:'',
+    password:'',
+    confirmPass:''
+  };
 
   faLock = faLock;
   userForm = true;
 
-  loginForm!: FormGroup;
+  register!: FormGroup;
   address!: FormGroup;
   submitted = false;
   addressSubmitted = false;
@@ -23,11 +34,11 @@ export class RegistrationComponent {
   eyeIcon: string = 'fa-eye-slash';
 
 
-constructor(private formBuilder:FormBuilder, private router: Router){}
+constructor(private formBuilder:FormBuilder, private router: Router,private signUpService:HttpSignupService){}
 
 ngOnInit():void{
 
-  this.loginForm = this.formBuilder.group(
+  this.register = this.formBuilder.group(
     {
       name: [
         '',
@@ -57,13 +68,6 @@ ngOnInit():void{
     }
   );
 
-  this.address = this.formBuilder.group({
-    line1: ['', Validators.required],
-    line2: [''],
-    pinCode: ['', Validators.required],
-    city: ['', Validators.required],
-    state: ['', Validators.required],
-  });
 }
 hideShowPass() {
   this.isText = !this.isText;
@@ -92,17 +96,40 @@ MustMatch(password: string, confirmPass: string) {
   onSubmit()
   {
     this.submitted = true;
-    if (this.loginForm.invalid) {
+    if (this.register.invalid) {
       return;
     }
-    console.log(this.loginForm.value);
+    // console.log(this.register.value);
+
+      this.signUpService.addSignup(this.register.value).subscribe({
+      next:(resp:any)=>{
+        alert('Signup Successful')
+        this.register.reset();
+        this.router.navigate([''])
+      },
+      error:(err:any)=>{
+        console.log(err);
+        
+      }
+
+
+    })
+    this.registerArr.push(this.registerObj);
+    localStorage.setItem('token',JSON.stringify(this.registerArr));
+    this.registerObj={
+      name:'',
+      mobile:'',
+      email:'',
+      password:'',
+      confirmPass:''
+    };
+    // this.router.navigate([''])
     
   }
-  toggleForm() {
-    this.submitted = true;
-    if (this.loginForm.invalid) {
-      return;
-    }
-    this.userForm = false;
-  }
+  // toggleForm() {
+  //   this.submitted = true;
+  //   if (this.register.invalid) {
+  //     return;
+  //   }
+  // }
 }

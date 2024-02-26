@@ -13,7 +13,7 @@
                 </div>
               </div>
               <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                <div class="card-body p-4 p-lg-5 text-black">
+                <div class="card-body p-4 text-black">
                   <!--Lock Icon-->
                   <div class="lockicon">
                     <fa-icon [icon]="faLock" class="fa-2x mt-1"></fa-icon>
@@ -23,36 +23,36 @@
                   <!-- User Details form -->
                   <div class="slide-right" *ngIf="userForm">
 
-                    <form [formGroup]="loginForm">
+                    <form [formGroup]="register" (ngSubmit)="onSubmit()">
                       <div class="headingtext">
                         <h3>Register yourself</h3>
                       </div>
 
                       <div class="textfield">
                         <div class="form-outline mb-2">
-                          <input type="name" formControlName="name"
-                            [ngClass]="{'is-invalid':submitted && loginForm.get('name')?.errors}" placeholder="Name"
+                          <input type="name" formControlName="name" [(ngModel)]="registerObj.name"
+                            [ngClass]="{'is-invalid':submitted && register.get('name')?.errors}" placeholder="Name"
                             class="form-control form-control-lg" />
                         </div>
 
 
                         <div class="form-outline mb-2">
-                          <input type="number" formControlName="mobile"
-                            [ngClass]="{'is-invalid':submitted && loginForm.get('mobile')?.errors}" placeholder="Mobile"
+                          <input type="number" formControlName="mobile" [(ngModel)]="registerObj.mobile"
+                            [ngClass]="{'is-invalid':submitted && register.get('mobile')?.errors}" placeholder="Mobile"
                             class="form-control form-control-lg" />
                         </div>
 
 
                         <div class="form-outline mb-2">
-                          <input type="email" formControlName="email"
-                            [ngClass]="{'is-invalid':submitted && loginForm.get('email')?.errors}"
+                          <input type="email" formControlName="email" [(ngModel)]="registerObj.email"
+                            [ngClass]="{'is-invalid':submitted && register.get('email')?.errors}"
                             placeholder="Email address" class="form-control form-control-lg" />
 
                         </div>
 
                         <div class="form-outline mb-3">
-                          <input [type]="type" formControlName="password"
-                            [ngClass]="{'is-invalid':submitted && loginForm.get('password')?.errors}"
+                          <input [type]="type" formControlName="password" [(ngModel)]="registerObj.password"
+                            [ngClass]="{'is-invalid':submitted && register.get('password')?.errors}"
                             placeholder="Password" class="form-control form-control-lg" />
                           <div class="eye">
                             <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
@@ -61,8 +61,8 @@
 
 
                         <div class="form-outline mb-2">
-                          <input [type]="type" formControlName="confirmPass"
-                            [ngClass]="{'is-invalid':submitted && loginForm.get('confirmPass')?.errors}"
+                          <input [type]="type" formControlName="confirmPass" [(ngModel)]="registerObj.confirmPass"
+                            [ngClass]="{'is-invalid':submitted && register.get('confirmPass')?.errors}"
                             placeholder="Confirm Password" class="form-control form-control-lg" />
                           <div class="eye">
                             <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
@@ -73,7 +73,7 @@
 
 
                       <div class="button">
-                        <button class="btn btn-dark btn-lg col-12" (click)="toggleForm()" type="button">Register</button>
+                        <button class="btn btn-dark btn-lg col-12" type="submit">Register</button>
 
                       </div>
 
