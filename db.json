@@ -263,6 +263,86 @@
       "city": "Honolulu",
       "AddharNumber": 213,
       "file": "C:\\fakepath\\DSCF2304.JPG"
+    },
+    {
+      "id": "339d",
+      "name": "test",
+      "role": "Junior Software Engineer",
+      "empId": "emp1",
+      "gender": "male",
+      "date": "2024-02-27",
+      "blood": "A+ve",
+      "email": "test@gmail.com",
+      "mobile": 9012345678,
+      "age": 12,
+      "password": "Demo@123",
+      "CurrentAddress": "test address",
+      "PermanentAddress": "test address",
+      "country": "India",
+      "state": "Maharasthra",
+      "city": "Pune",
+      "AddharNumber": 123456789012,
+      "file": "C:\\fakepath\\Photo.jpg"
+    },
+    {
+      "id": "612f",
+      "name": "jkdbfk",
+      "role": "Back-end developer",
+      "empId": "n  hb ,hb",
+      "gender": "male",
+      "date": "2024-02-26",
+      "blood": "B-ve",
+      "email": "test@jbj.com",
+      "mobile": 1234567890,
+      "age": 12,
+      "password": "Demo@123",
+      "CurrentAddress": "test address",
+      "PermanentAddress": "test address",
+      "country": "India",
+      "state": "Maharasthra",
+      "city": "Pune",
+      "AddharNumber": 8.298e+221,
+      "file": "C:\\fakepath\\Authentic.png"
+    },
+    {
+      "id": "49f7",
+      "name": "bfklfb",
+      "role": "Back-end developer",
+      "empId": "hblkb",
+      "gender": "male",
+      "date": "2024-02-14",
+      "blood": "O-ve",
+      "email": "test@an.com",
+      "mobile": 78329821730,
+      "age": 12,
+      "password": "Demo@1234",
+      "CurrentAddress": "test",
+      "PermanentAddress": "test",
+      "country": "India",
+      "state": "Maharasthra",
+      "city": "Mumbai",
+      "AddharNumber": 982219873029187300000,
+      "file": "C:\\fakepath\\IMG_1260-fotor-bg-remover-20230914221957_auto_x2.jpg"
+    },
+    {
+      "id": "b340",
+      "name": "db",
+      "role": "Junior Software Engineer",
+      "empId": "kegwkj",
+      "gender": "male",
+      "date": "2024-02-28",
+      "blood": "B+ve",
+      "email": "f@h.c",
+      "mobile": 123125325436543,
+      "age": 3,
+      "password": "Demo@123",
+      "CurrentAddress": "test",
+      "PermanentAddress": "test",
+      "country": "India",
+      "state": "Maharasthra",
+      "city": "Mumbai",
+      "AddharNumber": 2131231231,
+      "file": "C:\\fakepath\\udad2-fotor-bg-remover-2023091422943.png"
     }
   ],
   "signupUsers": [
@@ -293,158 +373,158 @@
   ],
   "country": [
     {
-      "id": 1,
+      "id": "1",
       "name": "India"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "USA"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Philippines"
     }
   ],
   "state": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Maharasthra",
       "state_id": 1
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Karnataka",
       "state_id": 2
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Tamil Nadu",
       "state_id": 3
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Kerala",
       "state_id": 4
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "California",
       "state_id": 5
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Hawaii",
       "state_id": 6
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Florida",
       "state_id": 7
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Aklan",
       "state_id": 8
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Batangas",
       "state_id": 9
     }
   ],
   "city": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Pune",
       "state_id": 1
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Mumbai",
       "state_id": 1
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Nashik",
       "state_id": 1
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Bengaluru",
       "state_id": 2
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Davanagere",
       "state_id": 2
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Hubballi",
       "state_id": 2
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Rajapalayam",
       "state_id": 3
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Chennai",
       "state_id": 3
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Kochi",
       "state_id": 4
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Thiruvananthapuram",
       "state_id": 4
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Los Angeles",
       "state_id": 5
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "San Francisco",
       "state_id": 5
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Honolulu",
       "state_id": 6
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Orlando",
       "state_id": 7
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Lezo",
       "state_id": 8
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Malay",
       "state_id": 8
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Taal Lake",
       "state_id": 9
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Talisay",
       "state_id": 9
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Taal",
       "state_id": 9
     }

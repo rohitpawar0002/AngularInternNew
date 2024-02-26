@@ -1,0 +1,23 @@
+/* .table{
+    height: 88vh;
+    width:80rem;
+    display: flex;
+} */
+
+.content-table{
+    text-align: left;
+    width: 82.8vw;
+    overflow-x: scroll;
+    border-radius: 10px;
+    margin-top: 7px;
+}
+
+th{
+    background-color: #009879;
+    color: #dddddd;
+}
+
+.content-table th, 
+.content-table td{
+    padding: 12px 15px;
+}

@@ -19,7 +19,8 @@
 .hideshow {
   position: absolute;
   top: 0px;
-  margin-left: -1rem;
+  margin-left: -0.3rem;
+  z-index: 999;
 }
 i:hover{
   color: blue;

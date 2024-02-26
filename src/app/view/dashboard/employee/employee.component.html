@@ -140,7 +140,7 @@
      
         <div class="col col-lg-4">
             <div data-mdb-input-init class="form-outline">
-              <input class="checkboxxx" type="checkbox" [(ngModel)]="copyEnabled"> Same Address
+              <input class="checkboxxx" type="checkbox" (change)="copyAddress($event)"> copy Address
                 <textarea class="form-control" formControlName="CurrentAddress" [ngClass]="{'is-invalid':submitted && employeeForm.get('CurrentAddress')?.errors}" placeholder="Enter Current Address" rows="3"></textarea>
                 <div *ngIf="submitted || employeeForm.get('CurrentAddress')?.invalid && (employeeForm.get('CurrentAddress')?.dirty || employeeForm.get('CurrentAddress')?.touched)">
                     <div *ngIf="employeeForm.get('CurrentAddress')?.hasError('required')">
@@ -152,7 +152,7 @@
 
          <div class="col col-lg-4">
             <div data-mdb-input-init class="form-outline">
-                <textarea class="form-control" [(ngModel)]="PermanatText" formControlName="PermanentAddress" placeholder="Enter Permanent Address" [ngClass]="{'is-invalid':submitted && employeeForm.get('PermanentAddress')?.errors}" rows="3"></textarea>
+                <textarea class="form-control" formControlName="PermanentAddress" placeholder="Enter Permanent Address" [ngClass]="{'is-invalid':submitted && employeeForm.get('PermanentAddress')?.errors}" rows="3"></textarea>
                 <div *ngIf="submitted || employeeForm.get('PermanentAddress')?.invalid && (employeeForm.get('PermanentAddress')?.dirty || employeeForm.get('PermanentAddress')?.touched)">
                     <div *ngIf="employeeForm.get('PermanentAddress')?.hasError('required')"> 
                         <!-- <p class="text-danger">Enter Permanent Address</p> -->
@@ -166,7 +166,7 @@
                <div class="col col-lg-4">
           <select class="form-select" (change)="OnSelectCountry($event)" formControlName="country" [ngClass]="{'is-invalid':submitted && employeeForm.get('country')?.errors}" aria-label="Default select example">
               <option value="">Select Country</option>
-              <option *ngFor="let item of displayArr" value="{{item.id}}">{{item.name}}</option>
+              <option *ngFor="let item of countryArr" value="{{item.id}}">{{item.name}}</option>
 
             </select>
         </div>

@@ -8,120 +8,126 @@ import { HttpEmployeeService } from 'src/app/Services/http-employee.service';
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
-  styleUrls: ['./employee.component.css']
+  styleUrls: ['./employee.component.css'],
 })
 export class EmployeeComponent {
-  CurrentTetx: string = '';
-  PermanatText: string = '';
- copyEnabled: boolean = false;
+  selectedCountry: string = '';
 
 
-countryArr:any=[];
-stateArrr:any=[];
-cityArr:any=[];
+  countryArr: any = [];
+  stateArrr: any = [];
+  cityArr: any = [];
 
-displayArr:any[]=[];
+  displayArr: any[] = [];
 
-  employeeForm!:FormGroup
-  submitted:boolean=false
+  employeeForm!: FormGroup;
+  submitted: boolean = false;
+  selectedState!: string;
 
-  constructor(private formbuilder:FormBuilder, private employeService:HttpEmployeeService,
-    private router:Router,private modelService:NgbModal,private httpDropdown:HttpDropdownService){}
- 
- ngOnInit():void{
-this.employeeForm=this.formbuilder.group({
-  name:['',Validators.required],
-  role:['',Validators.required],
-  empId:['',Validators.required],
-  gender:['',Validators.required],
-  date:['',Validators.required],
-  blood:['',Validators.required],
-  email:['',[Validators.required,Validators.email]],
-  mobile:['',Validators.required],
-  age:['',Validators.required],
-  password:['',Validators.required],
-  CurrentAddress:['',Validators.required],
-  PermanentAddress:['',Validators.required],
-  country:['',Validators.required],
-  state:['',Validators.required],
-  city:['',Validators.required],
-  AddharNumber:['',Validators.required],
-  file:['',Validators.required]
-})
+  constructor(
+    private formbuilder: FormBuilder,
+    private employeService: HttpEmployeeService,
+    private modelService: NgbModal,
+    private httpDropdown: HttpDropdownService
+  ) {}
 
-this.Country();
+  ngOnInit(): void {
+    this.employeeForm = this.formbuilder.group({
+      name: ['', Validators.required],
+      role: ['', Validators.required],
+      empId: ['', Validators.required],
+      gender: ['', Validators.required],
+      date: ['', Validators.required],
+      blood: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      mobile: ['', Validators.required],
+      age: ['', Validators.required],
+      password: ['', Validators.required],
+      CurrentAddress: ['', Validators.required],
+      PermanentAddress: ['', Validators.required],
+      country: ['', Validators.required],
+      state: ['', Validators.required],
+      city: ['', Validators.required],
+      AddharNumber: ['', Validators.required],
+      file: ['', Validators.required],
+    });
 
- }
-
- Country(){
-  this.httpDropdown.getCountry().subscribe({
-    next:((resp:any)=>{
-      this.displayArr=resp
-      console.log('Dropdown country',this.displayArr);
-      
-    })
-  })
- }
-
- handleCheckboxChange() {
-  if (this.copyEnabled) {
-    this.PermanatText = this.CurrentTetx;
-  } else {
-    this.PermanatText = '';
+    this.Country();
   }
-}
- OnSelectCountry(displayArr:any){
-  // console.log(displayArr.target.value);
-  this.httpDropdown.getState().subscribe({
-    next:((resp:any)=>{
-      this.stateArrr=resp.filter((e:any)=>e.id==displayArr.target.value)
-      console.log(this.stateArrr,'....');
-    })
-  }); 
- }
 
- OnSelectState(stateArrr:any){
-  this.httpDropdown.getCity().subscribe({
-    next:((resp:any)=>{
-      this.cityArr=resp.filter((e:any)=>e.state_id==stateArrr.target.value)
-      console.log('City Array',this.cityArr);
-      
-    })
-  })  
- }
+  Country() {
+    this.httpDropdown.getCountry().subscribe({
+      next: (resp: any) => {
+        this.countryArr = resp;
+        console.log('Dropdown country', this.countryArr);
+      },
+    });
+  }
 
-  onSubmit()
-  {
-    this.submitted=true
-    if(this.employeeForm.invalid)
-    {
-      return
-      
+  OnSelectCountry(event: any) {
+    this.selectedCountry = (this.countryArr.find((c:any)=> c.id == event.target.value)).name
+    // console.log(event.target.value);
+    this.httpDropdown.getState().subscribe({
+      next: (resp: any) => {
+        this.stateArrr = resp.filter(
+          (e: any) => e.id == event.target.value
+        );
+        this.employeeForm.patchValue({
+          city: '',
+          state: '',
+        });
+      },
+    });
+  }
+
+  OnSelectState(event: any) {
+    this.selectedState = (this.stateArrr.find((c:any)=> c.id == event.target.value)).name
+
+    this.httpDropdown.getCity().subscribe({
+      next: (resp: any) => {
+        this.cityArr = resp.filter(
+          (e: any) => e.state_id == event.target.value
+        );
+        this.employeeForm.patchValue({
+          city: '',
+        });
+      },
+    });
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    if (this.employeeForm.invalid) {
+      return;
     }
-  
+    this.employeeForm.patchValue({
+      country:this.selectedCountry,
+      state: this.selectedState
+    });
     console.log(this.employeeForm.value);
     this.employeService.Addemp(this.employeeForm.value).subscribe({
-      next:(resp:any)=>{
-        this.displayArr=resp
-        alert("Employee Added")       
+      next: (resp: any) => {
+        this.displayArr = resp;
+        alert('Employee Added');
         console.log(this.displayArr);
-        
+
         this.employeeForm.reset();
-        // this.modelService.dismissAll()
-        // this.router.navigate(['display'])
+        this.close();
       },
-      error:(err:any)=>{
+      error: (err: any) => {
         console.log(err);
-        
-      }
-    })
-
+      },
+    });
   }
-  close(){
-    this.modelService.dismissAll()
-
+  close() {
+    this.modelService.dismissAll();
   }
 
-
-  
+  copyAddress(event:any){
+    if(event.target.checked == true){
+      this.employeeForm.patchValue({
+        PermanentAddress: this.employeeForm.controls['CurrentAddress'].value
+      })
+    }
+  }
 }

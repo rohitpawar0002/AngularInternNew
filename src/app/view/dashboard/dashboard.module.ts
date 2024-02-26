@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EmployeeComponent } from './employee/employee.component';
 import { HomeComponent } from './home/home.component';
-import { DisplayEmployeeComponent } from 'src/app/display-employee/display-employee.component';
+import { DisplayEmployeeComponent } from './display-employee/display-employee.component';
 
 
 @NgModule({

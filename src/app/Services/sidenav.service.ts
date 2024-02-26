@@ -6,5 +6,6 @@ import { Injectable } from '@angular/core';
 export class SidenavService {
 
   constructor() { }
-  sideNavClosed : boolean = false
+  sideNavClosed : boolean = false;
+  user:any
 }

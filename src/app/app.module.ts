@@ -10,7 +10,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { SideNavComponent } from './layouts/dashboard-layout/side-nav/side-nav.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
-import { DashboardComponent } from './layouts/dashboard-layout/dashboard/dashboard.component';
 import { HeaderComponent } from './layouts/dashboard-layout/header/header.component';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { HeaderComponent } from './layouts/dashboard-layout/header/header.compon
     AppComponent,
     DashboardLayoutComponent,
     HeaderComponent,
-    DashboardComponent,
     SideNavComponent
   ],
   imports: [
