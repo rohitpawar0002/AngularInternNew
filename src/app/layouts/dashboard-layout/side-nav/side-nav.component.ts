@@ -24,7 +24,9 @@ export class SideNavComponent {
 
   ngOnInit(): void {
     
-    this.user = this.sideNavService.user;
+    this.user = JSON.parse(localStorage.getItem('user')||'');
+    // console.log(this.sideNavService.user);
+    
     // debugger
     // this.username=this.logincomponent.name;
     // debugger

@@ -66,7 +66,8 @@ export class EmployeeComponent {
   }
 
   OnSelectCountry(event: any) {
-    this.selectedCountry = (this.countryArr.find((c:any)=> c.id == event.target.value))
+    this.selectedCountry = (this.countryArr.find((c:any)=> c.id == event.target.value)).name
+    
     
     // console.log(event.target.value);
     this.httpDropdown.getState().subscribe({
@@ -86,7 +87,9 @@ export class EmployeeComponent {
   }
 
   OnSelectState(event: any) {
-    this.selectedState = (this.stateArrr.find((c:any)=> c.id == event.target.value))
+    console.log(this.stateArrr);
+    
+    this.selectedState = (this.stateArrr.find((c:any)=> c.state_id == event.target.value)).name
 
     this.httpDropdown.getCity().subscribe({
       next: (resp: any) => {
@@ -106,8 +109,8 @@ export class EmployeeComponent {
       return;
     }
     this.employeeForm.patchValue({
-      // country:this.selectedCountry,
-      // state: this.selectedState
+      country:this.selectedCountry,
+      state: this.selectedState
     });
     console.log(this.employeeForm.value);
     this.employeService.Addemp(this.employeeForm.value).subscribe({

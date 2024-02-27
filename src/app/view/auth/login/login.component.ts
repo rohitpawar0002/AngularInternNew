@@ -63,7 +63,7 @@ name: any
       next: (resp: any) => {
         const user = resp.find((a: any) => {
           
-          this.name= a.name
+          // this.name= a.name
           
           return a.email === this.loginForm.value.email &&
             a.password === this.loginForm.value.password
@@ -71,6 +71,8 @@ name: any
         });
         if (user) {
           this.sideNavService.user = user
+          localStorage.setItem('user', 
+          JSON.stringify(user))
           alert('Login Successful');
           this.loginForm.reset();
           this.router.navigate(['../../dashboard']);
