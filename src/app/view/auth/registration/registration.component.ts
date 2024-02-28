@@ -13,13 +13,13 @@ export class RegistrationComponent {
 signUpJson:any[]=[];
 
   registerArr:any[]=[];
-  registerObj:any={
-    name:'',
-    mobile:'',
-    email:'',
-    password:'',
-    confirmPass:''
-  };
+  // registerObj:any={
+  //   name:'',
+  //   mobile:'',
+  //   email:'',
+  //   password:'',
+  //   confirmPass:''
+  // };
 
   faLock = faLock;
   userForm = true;
@@ -114,15 +114,15 @@ MustMatch(password: string, confirmPass: string) {
 
 
     })
-    this.registerArr.push(this.registerObj);
-    localStorage.setItem('token',JSON.stringify(this.registerArr));
-    this.registerObj={
-      name:'',
-      mobile:'',
-      email:'',
-      password:'',
-      confirmPass:''
-    };
+    // this.registerArr.push(this.registerObj);
+    // localStorage.setItem('token',JSON.stringify(this.registerArr));
+    // this.registerObj={
+    //   name:'',
+    //   mobile:'',
+    //   email:'',
+    //   password:'',
+    //   confirmPass:''
+    // };
     // this.router.navigate([''])
     
   }

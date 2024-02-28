@@ -1,0 +1,225 @@
+<div class="container">
+    <div class="modal-header mt-n1 ">
+     <h3>Update Employee</h3>
+   </div>
+   <div class="modal-body mt-n2"> 
+ <form [formGroup]="updateemployeForm" (ngSubmit)="Update()">
+     <!-- 2 column grid layout with text inputs for the first and last names -->
+     <div class="row mt-4">
+       <div class="col col-lg-4">
+         <div data-mdb-input-init class="form-outline">
+           <input type="text" placeholder="Employee Name"  formControlName="name" [ngClass]="{'is-invalid':submitted && updateemployeForm.get('name')?.errors}" class="form-control" />
+           <div *ngIf="submitted || updateemployeForm.get('name')?.invalid && (updateemployeForm.get('name')?.dirty || updateemployeForm.get('name')?.touched)">
+             <div *ngIf="updateemployeForm.get('name')?.hasError('required')">
+             <!-- <p class="text-danger">Enter Name</p> -->
+          </div>
+           </div>
+         </div>
+       </div>
+       <div class="col col-lg-4">
+         <select class="form-select" formControlName="role" [ngClass]="{'is-invalid':submitted && updateemployeForm.get('role')?.errors}" aria-label="Default select example">
+             <option value="">Select Role</option>
+             <option value="Junior Software Engineer">Junior Software Engineer</option>
+             <option value="Desktop Support Manager">Desktop Support Manager</option>
+             <option value="Web Developer">Web Developer</option>
+             <option value="Database administrator">Database administrator</option>
+             <option value="Back-end developer">Back-end developer</option>
+             <option value="Product manager">Product manager</option>
+             <option value="HR Manager">HR Manager</option>
+           </select>
+       </div> 
+        <div class="col col-lg-4">
+         <div data-mdb-input-init class="form-outline">
+           <input type="text" formControlName="empId" [ngClass]="{'is-invalid':submitted && updateemployeForm.get('empId')?.errors}"  placeholder="Employee ID" class="form-control" />
+           <div *ngIf="submitted || updateemployeForm.get('empId')?.invalid && (updateemployeForm.get('empId')?.dirty || updateemployeForm.get('empId')?.touched)">
+             <div *ngIf="updateemployeForm.get('empId')?.hasError('required')">
+                 <!-- <p class="text-danger">Enter Employee Id</p> -->
+             </div>
+ 
+           </div>
+         </div>
+       </div>
+     </div>
+ 
+  <div class="row mt-4">
+      <div class="col col-lg-4">
+     <div class="d-flex">
+           <!-- check radio male -->
+  <div class="form-check mx-1">
+     <input class="form-check-input" formControlName="gender"  type="radio" name="gender" value="male" />
+     <label class="form-check-label" for="flexRadioDefault1">Male</label>
+   </div>  
+   <!-- checked radio Female -->
+   <div class="form-check mx-1">
+     <input class="form-check-input" formControlName="gender" type="radio" name="gender" value="female" />
+     <label class="form-check-label" for="flexRadioDefault2">Female</label>
+   </div>
+   <!-- checked radio other -->
+     <div class="form-check mx-1">
+     <input class="form-check-input" type="radio" formControlName="gender" name="gender" value="other"/>
+     <label class="form-check-label" for="flexRadioDefault2">Other</label>
+   </div> 
+   
+ </div>
+         </div>
+         <div class="col col-lg-4">
+           <input type="date" formControlName="date" [ngClass]="{'is-invalid':submitted && updateemployeForm.get('date')?.errors}" class="form-control" >
+           <div *ngIf="submitted || updateemployeForm.get('date')?.invalid && (updateemployeForm.get('date')?.dirty || updateemployeForm.get('date')?.touched)">
+             <div *ngIf="updateemployeForm.get('date')?.hasError('required')"> 
+                 <!-- <p class="text-danger">Date Required</p> -->
+             </div>
+           </div>
+         </div>
+ 
+ 
+          <div class="col col-lg-4">
+           <div data-mdb-input-init class="form-outline">
+             <input type="number" formControlName="age" [ngClass]="{'is-invalid':submitted && updateemployeForm.get('age')?.errors}" id="form3Example2" placeholder="Age" class="form-control" />
+             <div *ngIf="submitted || updateemployeForm.get('age')?.invalid && (updateemployeForm.get('age')?.dirty || updateemployeForm.get('age')?.touched)">
+                 <div *ngIf="updateemployeForm.get('age')?.hasError('required')"> 
+                     <!-- <-- <p class="text-danger">Date Required</p> --> 
+                  </div>
+               </div>
+           </div>
+         </div>
+       </div> 
+ 
+ 
+        <div class="row mt-4">
+         <div class="col col-lg-4">
+             <select class="form-select" formControlName="blood" [ngClass]="{'is-invalid':submitted && updateemployeForm.get('blood')?.errors}" aria-label="Default select example">
+                 <option value="">Blood Group</option>
+                 <option value="A+ve">A+ve</option>
+                 <option value="A-ve">A-ve</option>
+                 <option value="B+ve">B+ve</option>
+                 <option value="B-ve">B-ve</option>
+                 <option value="O+ve">O+ve</option>
+                 <option value="O-ve">O-ve</option>
+                 <option value="AB+ve">AB+ve</option>
+                 <option value="AB-ve">AB-ve</option>             
+               </select>
+        </div>    
+       
+         <div class="col col-lg-4">
+             <div data-mdb-input-init class="form-outline">
+                 <input type="email" formControlName="email" [ngClass]="{'is-invalid':submitted && updateemployeForm.get('email')?.errors}" placeholder="Email" class="form-control" />
+                 <div *ngIf="submitted || updateemployeForm.get('email')?.invalid && (updateemployeForm.get('email')?.dirty || updateemployeForm.get('email')?.touched)">
+                     <div *ngIf="updateemployeForm.get('email')?.hasError('required')">
+                         <!-- <p class="text-danger">Email Required</p> -->
+                     </div>
+                     <div *ngIf="updateemployeForm.get('email')?.hasError('email')"> 
+                         <!-- <p class="text-danger">Enter Valid Email</p> -->
+                     </div>
+                   </div>
+             </div>
+         </div>
+ 
+          <div class="col col-lg-4">
+             <div data-mdb-input-init class="form-outline">
+                 <input type="number" formControlName="mobile" [ngClass]="{'is-invalid':submitted && updateemployeForm.get('mobile')?.errors}" placeholder="Mobile Number" class="form-control" />
+                 <div *ngIf="submitted || updateemployeForm.get('mobile')?.invalid && (updateemployeForm.get('mobile')?.dirty || updateemployeForm.get('mobile')?.touched)">
+                     <div *ngIf="updateemployeForm.get('mobile')?.hasError('required')">
+                         <!-- <p class="text-danger">Enter Mobile</p> -->
+                   </div>
+                   <div *ngIf="updateemployeForm.get('mobile')?.hasError('pattern')"></div>
+                   </div>
+             </div>
+         </div>
+     </div> 
+ 
+      <div class="row mt-4">
+         <div class="col col-lg-4">
+             <div data-mdb-input-init class="form-outline">
+                 <input type="password" formControlName="password" [ngClass]="{'is-invalid':submitted && updateemployeForm.get('password')?.errors}" placeholder="Password" class="form-control" />
+                 <div *ngIf="submitted || updateemployeForm.get('password')?.invalid && (updateemployeForm.get('password')?.dirty || updateemployeForm.get('password')?.touched)">
+                     <div *ngIf="updateemployeForm.get('password')?.hasError('required')">
+                         <!-- <p class="text-danger">Enter Password</p> -->
+                      </div>
+                   </div>
+             </div>
+         </div>     
+      
+         <div class="col col-lg-4">
+             <div data-mdb-input-init class="form-outline">
+               <input class="checkboxxx" type="checkbox" (change)="copyAddress($event)">copy Address
+                 <textarea class="form-control" formControlName="CurrentAddress" [ngClass]="{'is-invalid':submitted && updateemployeForm.get('CurrentAddress')?.errors}" placeholder="Enter Current Address" rows="3"></textarea>
+                 <div *ngIf="submitted || updateemployeForm.get('CurrentAddress')?.invalid && (updateemployeForm.get('CurrentAddress')?.dirty || updateemployeForm.get('CurrentAddress')?.touched)">
+                     <div *ngIf="updateemployeForm.get('CurrentAddress')?.hasError('required')">
+                         <!-- <p class="text-danger">Enter Current Address</p> -->
+                     </div>
+                   </div>
+             </div>
+         </div>       
+ 
+          <div class="col col-lg-4">
+             <div data-mdb-input-init class="form-outline">
+                 <textarea class="form-control" formControlName="PermanentAddress" placeholder="Enter Permanent Address" [ngClass]="{'is-invalid':submitted && updateemployeForm.get('PermanentAddress')?.errors}" rows="3"></textarea>
+                 <div *ngIf="submitted || updateemployeForm.get('PermanentAddress')?.invalid && (updateemployeForm.get('PermanentAddress')?.dirty || updateemployeForm.get('PermanentAddress')?.touched)">
+                     <div *ngIf="updateemployeForm.get('PermanentAddress')?.hasError('required')"> 
+                         <!-- <p class="text-danger">Enter Permanent Address</p> -->
+                      </div>
+                   </div>
+             </div>
+         </div>
+     </div>
+  
+     <div class="row mt-4">
+                <div class="col col-lg-4">
+           <select class="form-select" (change)="OnSelectCountry($event)" formControlName="country" [ngClass]="{'is-invalid':submitted && updateemployeForm.get('country')?.errors}" aria-label="Default select example">
+               <option value="">Select Country</option>
+               <option *ngFor="let item of countryArr" value="{{item.id}}">{{item.name}}</option>
+ 
+             </select>
+         </div>
+         <div class="col col-lg-4">
+           <div data-mdb-input-init class="form-outline">
+             <select class="form-select" (change)="OnSelectState($event)" formControlName="state" [ngClass]="{'is-invalid':submitted && updateemployeForm.get('state')?.errors}" aria-label="Default select example">
+                 <option value="">Select State</option>
+                 <option *ngFor="let item of stateArrr" value="{{item.state_id}}">{{item.name}}</option>
+             
+ 
+               </select>
+            </div>
+         </div>
+         <div class="col col-lg-4">
+             <div data-mdb-input-init class="form-outline">
+                 <select class="form-select" formControlName="city" [ngClass]="{'is-invalid':submitted && updateemployeForm.get('city')?.errors}" aria-label="Default select example">
+                     <option value="">Select City</option>
+                     <option *ngFor="let item of cityArr">{{item.name}}</option>
+ 
+                   </select>      
+                       </div> 
+           </div>
+ 
+       </div> 
+ 
+        <div class="row mt-4">
+         <div class="col col-lg-4">
+       <div data-mdb-input-init class="form-outline mb-4">
+         <input type="number"  [ngClass]="{'is-invalid':submitted && updateemployeForm.get('AddharNumber')?.errors}"  formControlName="AddharNumber" placeholder="Addhar Number" class="form-control" />
+         <div *ngIf="submitted || updateemployeForm.get('AddharNumber')?.invalid && (updateemployeForm.get('AddharNumber')?.dirty || updateemployeForm.get('AddharNumber')?.touched)">
+           <div *ngIf="updateemployeForm.get('AddharNumber')?.hasError('required')"> 
+                 <!-- <p class="text-danger">Enter Addhar Number</p> -->
+              </div>
+           </div>
+       </div>
+         </div>
+ 
+         <div class="col col-lg-4">
+     <input type="file" formControlName="file"  [ngClass]="{'is-invalid':submitted && updateemployeForm.get('file')?.errors}" class="form-control" id="customFile" />
+         </div>
+       </div>
+           
+   
+     <!-- Submit button -->
+      <div class="modal-footer">
+     <button type="submit" class="btn btn-outline-info mb-4">Update Employee</button>
+     <button type="button" class="btn btn-outline-danger mb-4 mx-2" (click)="close()">Close</button>
+     </div>
+   
+    
+    </form>
+   </div>
+ </div> 
+ 
+ 

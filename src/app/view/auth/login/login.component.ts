@@ -14,7 +14,7 @@ export class LoginComponent {
   faLock = faLock;
 
   username: any[] = [];
-
+name: any 
   loginForm!: FormGroup;
   submitted = false;
 
@@ -62,10 +62,12 @@ export class LoginComponent {
     this.signUpService.getSignup().subscribe({
       next: (resp: any) => {
         const user = resp.find((a: any) => {
+          
+          this.name= a.name
+          
           return a.email === this.loginForm.value.email &&
             a.password === this.loginForm.value.password
-            ? a
-            : '';
+     
         });
         if (user) {
           this.sideNavService.user = user

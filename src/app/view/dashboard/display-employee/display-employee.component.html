@@ -9,6 +9,7 @@
     <div class="content-table">
       <table>
         <thead>
+          <th scope="col">ID</th>
           <th scope="col">Name</th>
           <th scope="col">Role</th>
           <th scope="col">EmpID</th>
@@ -28,6 +29,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let item of displayTableArray" class="bg-light border border-bottom-2">
+             <td>{{item.id}}</td>
             <td>{{ item.name }}</td>
             <td>{{ item.role }}</td>
             <td>{{ item.empId }}</td>
@@ -44,6 +46,9 @@
             <td>{{ item.city }}</td>
             <td>{{ item.AddharNumber }}</td>
             <td>{{ item.file }}</td>
+            <td>
+              <button class="btn btn-sm btn-primary"  routerLink="../edit/{{item.id}}" (click)="onEdit(item.id)">Edit</button>
+            </td>
           </tr>
         </tbody>
       </table>

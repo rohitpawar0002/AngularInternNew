@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HttpDropdownService } from 'src/app/Services/http-dropdown.service';
 import { HttpEmployeeService } from 'src/app/Services/http-employee.service';
 
 @Component({
-  selector: 'app-employee',
-  templateUrl: './employee.component.html',
-  styleUrls: ['./employee.component.css'],
+  selector: 'app-update-emp',
+  templateUrl: './update-emp.component.html',
+  styleUrls: ['./update-emp.component.css']
 })
-export class EmployeeComponent {
+export class UpdateEmpComponent {
+
   selectedCountry: string = '';
 
 
@@ -20,19 +21,21 @@ export class EmployeeComponent {
 
   displayArr: any[] = [];
 
-  employeeForm!: FormGroup;
+  updateemployeForm!: FormGroup;
   submitted: boolean = false;
   selectedState!: string;
 
+  
   constructor(
     private formbuilder: FormBuilder,
     private employeService: HttpEmployeeService,
     private modelService: NgbModal,
-    private httpDropdown: HttpDropdownService
+    private httpDropdown: HttpDropdownService,
+    private router:ActivatedRoute,
+    private routerNav:Router
   ) {}
-
   ngOnInit(): void {
-    this.employeeForm = this.formbuilder.group({
+    this.updateemployeForm = this.formbuilder.group({
       name: ['', Validators.required],
       role: ['', Validators.required],
       empId: ['', Validators.required],
@@ -52,7 +55,38 @@ export class EmployeeComponent {
       file: ['', Validators.required],
     });
 
+    // console.log(this.router.snapshot.params['id']);
     this.Country();
+this. geteditAPI()
+
+    
+  }
+
+  geteditAPI(){
+    this.employeService.getemployeById(this.router.snapshot.params['id']).subscribe({
+      next:((resp:any)=>{
+        this.updateemployeForm = this.formbuilder.group({
+          name: [resp['name']],
+          role: [resp['role']],
+          empId: [resp['empId']],
+          gender: [resp['gender']],
+          date: [resp['date']],
+          blood: [resp['blood']],
+          email: [resp['email']],
+          mobile: [resp['mobile']],
+          age: [resp['age']],
+          password: [resp['password']],
+          CurrentAddress: [resp['CurrentAddress']],
+          PermanentAddress: [resp['PermanentAddress']],
+          country: [resp['country']],
+          state: [resp['state']],
+          city: [resp['city']],
+          AddharNumber:[resp['AddharNumber']],
+          file: [resp['file'] ],
+        });
+            
+      })
+    })
   }
 
   Country() {
@@ -76,8 +110,9 @@ export class EmployeeComponent {
           
           (e: any) => e.id == event.target.value
           
-        );        
-        this.employeeForm.patchValue({
+        );
+        
+        this.updateemployeForm.patchValue({
           city: '',
           state: '',
         });
@@ -93,31 +128,31 @@ export class EmployeeComponent {
         this.cityArr = resp.filter(
           (e: any) => e.state_id == event.target.value
         );
-        this.employeeForm.patchValue({
+        this.updateemployeForm.patchValue({
           city: '',
         });
       },
     });
   }
 
-  onSubmit() {
+  Update() {
     this.submitted = true;
-    if (this.employeeForm.invalid) {
+    if (this.updateemployeForm.invalid) {
       return;
     }
-    this.employeeForm.patchValue({
-      // country:this.selectedCountry,
-      // state: this.selectedState
+    this.updateemployeForm.patchValue({
+      country:this.selectedCountry,
+      state: this.selectedState
     });
-    console.log(this.employeeForm.value);
-    this.employeService.Addemp(this.employeeForm.value).subscribe({
-      next: (resp: any) => {
+    console.log(this.updateemployeForm.value);
+    this.employeService.updateEmployeData(this.router.snapshot.params['id'],this.updateemployeForm.value).subscribe({
+      next: (resp: any) => {     
         this.displayArr = resp;
         alert('Employee Added');
-        console.log('disssssss',this.displayArr);
+        console.log(this.displayArr);
 
-        this.employeeForm.reset();
-        this.close();
+        this.updateemployeForm.reset();
+        this.routerNav.navigate(['dashboard/employee-list'])
       },
       error: (err: any) => {
         console.log(err);
@@ -130,9 +165,10 @@ export class EmployeeComponent {
 
   copyAddress(event:any){
     if(event.target.checked == true){
-      this.employeeForm.patchValue({
-        PermanentAddress: this.employeeForm.controls['CurrentAddress'].value
+      this.updateemployeForm.patchValue({
+        PermanentAddress: this.updateemployeForm.controls['CurrentAddress'].value
       })
     }
   }
+
 }

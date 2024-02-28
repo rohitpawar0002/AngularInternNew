@@ -7,13 +7,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EmployeeComponent } from './employee/employee.component';
 import { HomeComponent } from './home/home.component';
 import { DisplayEmployeeComponent } from './display-employee/display-employee.component';
+import { UpdateEmpComponent } from 'src/app/update-emp/update-emp.component';
 
 
 @NgModule({
   declarations: [
     EmployeeComponent,
     HomeComponent,
-    DisplayEmployeeComponent
+    DisplayEmployeeComponent,
+    UpdateEmpComponent
   ],
   imports: [
     CommonModule,

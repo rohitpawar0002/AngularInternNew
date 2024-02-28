@@ -8,16 +8,17 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
-import { SideNavComponent } from './layouts/dashboard-layout/side-nav/side-nav.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import { HeaderComponent } from './layouts/dashboard-layout/header/header.component';
+import { SideNavComponent } from './layouts/dashboard-layout/side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardLayoutComponent,
     HeaderComponent,
-    SideNavComponent
+    SideNavComponent,
+    
   ],
   imports: [
     BrowserModule,

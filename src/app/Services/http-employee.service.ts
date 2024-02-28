@@ -16,4 +16,10 @@ Addemp(data:any)
 Getemp(){
   return this.http.get('http://localhost:3000/employee');
 }
+getemployeById(id:any){
+  return this.http.get(`http://localhost:3000/employee/${id}`)
+}
+updateEmployeData(id:any,data:any){
+  return this.http.put(`http://localhost:3000/employee/${id}`,data)
+}
 }

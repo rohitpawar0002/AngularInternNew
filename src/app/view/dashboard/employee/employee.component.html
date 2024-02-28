@@ -121,6 +121,7 @@
                     <div *ngIf="employeeForm.get('mobile')?.hasError('required')">
                         <!-- <p class="text-danger">Enter Mobile</p> -->
                   </div>
+                  <div *ngIf="employeeForm.get('mobile')?.hasError('pattern')"></div>
                   </div>
             </div>
         </div>
@@ -140,7 +141,7 @@
      
         <div class="col col-lg-4">
             <div data-mdb-input-init class="form-outline">
-              <input class="checkboxxx" type="checkbox" (change)="copyAddress($event)"> copy Address
+              <input class="checkboxxx" type="checkbox" (change)="copyAddress($event)">copy Address
                 <textarea class="form-control" formControlName="CurrentAddress" [ngClass]="{'is-invalid':submitted && employeeForm.get('CurrentAddress')?.errors}" placeholder="Enter Current Address" rows="3"></textarea>
                 <div *ngIf="submitted || employeeForm.get('CurrentAddress')?.invalid && (employeeForm.get('CurrentAddress')?.dirty || employeeForm.get('CurrentAddress')?.touched)">
                     <div *ngIf="employeeForm.get('CurrentAddress')?.hasError('required')">
@@ -195,7 +196,7 @@
        <div class="row mt-4">
         <div class="col col-lg-4">
       <div data-mdb-input-init class="form-outline mb-4">
-        <input type="number" [ngClass]="{'is-invalid':submitted && employeeForm.get('AddharNumber')?.errors}"  formControlName="AddharNumber" placeholder="Addhar Number" class="form-control" />
+        <input type="number"  [ngClass]="{'is-invalid':submitted && employeeForm.get('AddharNumber')?.errors}"  formControlName="AddharNumber" placeholder="Addhar Number" class="form-control" />
         <div *ngIf="submitted || employeeForm.get('AddharNumber')?.invalid && (employeeForm.get('AddharNumber')?.dirty || employeeForm.get('AddharNumber')?.touched)">
           <div *ngIf="employeeForm.get('AddharNumber')?.hasError('required')"> 
                 <!-- <p class="text-danger">Enter Addhar Number</p> -->

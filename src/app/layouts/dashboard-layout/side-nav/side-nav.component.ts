@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,  } from '@angular/core';
 import { HttpSignupService } from 'src/app/Services/http-signup.service';
 import { SidenavService } from 'src/app/Services/sidenav.service';
+import { LoginComponent } from 'src/app/view/auth/login/login.component';
 
 @Component({
   selector: 'app-side-nav',
@@ -8,7 +9,7 @@ import { SidenavService } from 'src/app/Services/sidenav.service';
   styleUrls: ['./side-nav.component.css'],
 })
 export class SideNavComponent {
-  userName: any;
+
 
   constructor(
     private sideNavService: SidenavService,
@@ -22,6 +23,10 @@ export class SideNavComponent {
   user: any;
 
   ngOnInit(): void {
+    
     this.user = this.sideNavService.user;
+    // debugger
+    // this.username=this.logincomponent.name;
+    // debugger
   }
 }

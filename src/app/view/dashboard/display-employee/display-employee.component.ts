@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HttpEmployeeService } from 'src/app/Services/http-employee.service';
 import { EmployeeComponent } from '../employee/employee.component';
-
+import { UpdateEmpComponent } from 'src/app/update-emp/update-emp.component';
 @Component({
   selector: 'app-display-employee',
   templateUrl: './display-employee.component.html',
@@ -19,6 +19,10 @@ export class DisplayEmployeeComponent {
   ngOnInit(): void {
     this.getEmployee();
   }
+  onEdit(i:any){
+    this.displayTableArray=i;
+
+   }
 
   getEmployee() {
     this.employeeService.Getemp().subscribe((resp: any) => {
