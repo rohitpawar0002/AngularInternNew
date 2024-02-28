@@ -73,11 +73,7 @@ export class EmployeeComponent {
     this.httpDropdown.getState().subscribe({
       next: (resp: any) => {
         
-        this.stateArrr = resp.filter(
-          
-          (e: any) => e.id == event.target.value
-          
-        );        
+        this.stateArrr = resp.filter((e: any) => e.id == event.target.value);        
         this.employeeForm.patchValue({
           city: '',
           state: '',
@@ -93,9 +89,7 @@ export class EmployeeComponent {
 
     this.httpDropdown.getCity().subscribe({
       next: (resp: any) => {
-        this.cityArr = resp.filter(
-          (e: any) => e.state_id == event.target.value
-        );
+        this.cityArr = resp.filter((e: any) => e.state_id == event.target.value);
         this.employeeForm.patchValue({
           city: '',
         });
@@ -103,7 +97,7 @@ export class EmployeeComponent {
     });
   }
 
-  onSubmit() {
+  onSubmit(event:any) {
     this.submitted = true;
     if (this.employeeForm.invalid) {
       return;

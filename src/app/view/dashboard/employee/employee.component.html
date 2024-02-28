@@ -3,7 +3,7 @@
     <h3>Add Employee</h3>
   </div>
   <div class="modal-body mt-n2"> 
-<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit($event)">
     <!-- 2 column grid layout with text inputs for the first and last names -->
     <div class="row mt-4">
       <div class="col col-lg-4">

@@ -1,4 +1,5 @@
 import { Component,  } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpSignupService } from 'src/app/Services/http-signup.service';
 import { SidenavService } from 'src/app/Services/sidenav.service';
 import { LoginComponent } from 'src/app/view/auth/login/login.component';
@@ -13,7 +14,7 @@ export class SideNavComponent {
 
   constructor(
     private sideNavService: SidenavService,
-    private httpSignupService: HttpSignupService
+    private httpSignupService: HttpSignupService, private router:Router
   ) {}
   show: boolean = true;
   toggelNav() {
@@ -30,5 +31,10 @@ export class SideNavComponent {
     // debugger
     // this.username=this.logincomponent.name;
     // debugger
+  }
+
+  logOut(){
+    localStorage.removeItem('user')
+    this.router.navigate(['../auth/login'])
   }
 }

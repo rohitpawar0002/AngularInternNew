@@ -41,4 +41,16 @@ export class DisplayEmployeeComponent {
       },
     });
   }
+
+  Ondelete(event:any,id:any){
+    if(confirm('Are you sure you want to delete this data?'))
+    {
+      event.target.innerText="Deleting...";
+      this.employeeService.deleteEmployeData(id).subscribe({
+        next:((resp:any)=>{
+          this.getEmployee();
+        })
+      })
+    }
+  } 
 }

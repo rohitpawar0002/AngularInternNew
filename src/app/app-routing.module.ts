@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardLayoutComponent,
-    children: [
+  children: [
       {
         path: '',
         loadChildren: () =>

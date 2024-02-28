@@ -96,38 +96,35 @@ export class UpdateEmpComponent {
     this.httpDropdown.getCountry().subscribe({
       next: (resp: any) => {
         this.countryArr = resp;
-        this.updateemployeForm.patchValue({
-          country: this.countryArr.find(
-            (c: any) => c.name == this.employee['country']
-          ).id,
-        });
-        if (this.isFirstLoad) {
-          this.getState(this.updateemployeForm.value.country);
-        }
+        // this.updateemployeForm.patchValue({
+        //   country: this.countryArr.find(
+        //     (c: any) => c.name == this.employee['country']
+        //   ).id,
+        // });
+        // if (this.isFirstLoad) {
+        //   this.getState(this.updateemployeForm.value.country);
+        // }
         console.log('Dropdown country', this.countryArr);
       },
     });
   }
 
   OnSelectCountry(event: any) {
-    this.selectedCountry = this.countryArr.find(
-      (c: any) => c.id == event.target.value
-    );
-    this.getState(event.target.value);
-  }
-  getState(id: any) {
+    this.selectedCountry = (this.countryArr.find((c: any) => c.id == event.target.value)).name;
+    // this.getState(event.target.value);
+    
     // console.log(event.target.value);
     this.httpDropdown.getState().subscribe({
       next: (resp: any) => {
-        this.stateArrr = resp.filter((e: any) => e.id == id);
-        if (this.isFirstLoad) {
-          this.updateemployeForm.patchValue({
-            state: this.stateArrr.find((t: any) => t.name == this.employee['state']
-            ).state_id,
-          });
+        this.stateArrr = resp.filter((e: any) => e.id == event.target.value);
+        // if (this.isFirstLoad) {
+        //   this.updateemployeForm.patchValue({
+        //     state: this.stateArrr.find((t: any) => t.name == this.employee['state']
+        //     ).state_id,
+        //   });
           
-          this.getcity(this.updateemployeForm.value.state)
-        }
+        //   this.getcity(this.updateemployeForm.value.state)
+        // }
         this.updateemployeForm.patchValue({
           city: '',
           state: '',
@@ -135,35 +132,31 @@ export class UpdateEmpComponent {
       },
     });
   }
+  
   OnSelectState(event: any) {
-    this.selectedState = this.stateArrr.find(
-      (c: any) => c.id == event.target.value
-    );
+    this.selectedState = (this.stateArrr.find((c: any) => c.state_id == event.target.value)).name;
 
-    this.getcity(event.target.value);
-  }
-
-  getcity(id: any) {
+     
     this.httpDropdown.getCity().subscribe({
       next: (resp: any) => {
-        this.cityArr = resp.filter((e: any) => e.state_id == id);
+        this.cityArr = resp.filter((e: any) => e.state_id == event.target.value);
         this.updateemployeForm.patchValue({
           city: '',
         });
-
-        if (this.isFirstLoad) {
-          this.isFirstLoad = false;
-          this.updateemployeForm.patchValue({
-            city: this.stateArrr.find(
-              (t: any) => t.name == this.employee['city']
-            ),
-          });
-          console.log(this.updateemployeForm.value);
-          
-        }
-      },
-    });
-  }
+        
+        // if (this.isFirstLoad) {
+        //   this.isFirstLoad = false;
+        //   this.updateemployeForm.patchValue({
+        //     city: this.stateArrr.find(
+        //       (t: any) => t.name == this.employee['city']
+        //       ),
+        //     });
+        //     console.log(this.updateemployeForm.value);
+            
+        //   }
+        },
+      });
+ }
   Update() {
     this.submitted = true;
     if (this.updateemployeForm.invalid) {

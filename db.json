@@ -25,64 +25,88 @@
   ],
   "employee": [
     {
-      "id": "f024",
-      "name": "t",
-      "role": "Junior Software Engineer",
-      "empId": "1",
-      "gender": "male",
-      "date": "2024-02-29",
-      "blood": "A-ve",
-      "email": "A@gmail.com",
-      "mobile": 3870219836,
-      "age": 23,
-      "password": "S@jb1",
-      "CurrentAddress": "test",
-      "PermanentAddress": "test",
-      "country": "India",
-      "state": "Maharasthra",
-      "city": "Pune",
-      "AddharNumber": 1231,
-      "file": "C:\\fakepath\\download-removebg-preview-fotor-bg-remover-20230914215452.png"
+      "name": [
+        [
+          "rohit"
+        ]
+      ],
+      "role": [
+        [
+          "Junior Software Engineer"
+        ]
+      ],
+      "empId": [
+        [
+          "1"
+        ]
+      ],
+      "gender": [
+        [
+          "male"
+        ]
+      ],
+      "date": [
+        [
+          "2024-02-28"
+        ]
+      ],
+      "blood": [
+        [
+          "A-ve"
+        ]
+      ],
+      "email": [
+        [
+          "rohit@gmail.com"
+        ]
+      ],
+      "mobile": [
+        9730023006
+      ],
+      "age": [
+        22
+      ],
+      "password": [
+        [
+          "Rohit@123"
+        ]
+      ],
+      "CurrentAddress": [
+        "Pimple Nilkha"
+      ],
+      "PermanentAddress": [
+        "Pimple Nilkha"
+      ],
+      "country": "Philippines",
+      "state": "Aklan",
+      "city": "Lezo",
+      "AddharNumber": [
+        [
+          112321213
+        ]
+      ],
+      "file": "C:\\fakepath\\logo2 - Copy.png",
+      "id": "9710"
     },
     {
-      "id": "9710",
-      "name": "rohit",
-      "role": "Junior Software Engineer",
-      "empId": "1",
-      "gender": "male",
-      "date": "2024-02-28",
-      "blood": "A-ve",
-      "email": "rohit@gmail.com",
-      "mobile": 2891302918,
-      "age": 21,
-      "password": "Rohit@123",
-      "CurrentAddress": "test",
-      "PermanentAddress": "test",
-      "country": "India",
-      "state": "Maharasthra",
-      "city": "Pune",
-      "AddharNumber": 112321213,
-      "file": "C:\\fakepath\\kurdai.jpeg"
-    },
-    {
-      "id": "9c5c",
-      "name": "demo",
-      "role": "Desktop Support Manager",
+      "id": "f304",
+      "name": "Suraj Kolhe",
+      "role": "Product manager",
       "empId": "23",
-      "gender": "female",
-      "date": "2024-02-08",
+      "gender": "male",
+      "date": "2000-12-02",
       "blood": "B-ve",
-      "email": "demo@gma",
-      "mobile": 1212121212,
-      "age": 12,
-      "password": "jnkds",
-      "CurrentAddress": "nwkdf",
-      "PermanentAddress": "nwkdf",
-      "country": "USA",
-      "state": "Hawaii",
-      "city": "Honolulu",
-      "AddharNumber": 213,
-      "file": "C:\\fakepath\\wafersmenu - Copy.jpeg"
+      "email": "suraj@gmail.com",
+      "mobile": 8953678902,
+      "age": 24,
+      "password": "suraj@111",
+      "CurrentAddress": "Audha, Pune",
+      "PermanentAddress": "Audha, Pune",
+      "country": "India",
+      "state": "Tamil Nadu",
+      "city": "Chennai",
+      "AddharNumber": 2345678946,
+      "file": "C:\\fakepath\\DSCF2304.JPG"
     }
   ],
   "signupUsers": [

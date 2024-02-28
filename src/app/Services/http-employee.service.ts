@@ -22,4 +22,7 @@ getemployeById(id:any){
 updateEmployeData(id:any,data:any){
   return this.http.put(`http://localhost:3000/employee/${id}`,data)
 }
+deleteEmployeData(id:any){
+  return this.http.delete(`http://localhost:3000/employee/${id}`)
+}
 }
