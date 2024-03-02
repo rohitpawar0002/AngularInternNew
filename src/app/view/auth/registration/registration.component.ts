@@ -103,6 +103,8 @@ MustMatch(password: string, confirmPass: string) {
 
       this.signUpService.addSignup(this.register.value).subscribe({
       next:(resp:any)=>{
+        console.log(resp);
+        
         alert('Signup Successful')
         this.register.reset();
         this.router.navigate([''])

@@ -61,8 +61,8 @@ export class UpdateEmpComponent {
       country: ['', Validators.required],
       state: ['', Validators.required],
       city: ['', Validators.required],
-      AddharNumber: ['', Validators.required],
-      file: ['', Validators.required],
+      AddharNumber: ['',],
+      file: ['',],
     });
   }
 
@@ -73,17 +73,17 @@ export class UpdateEmpComponent {
         next: (resp: any) => {
           this.employee = resp;
           this.updateemployeForm.patchValue({
-            name: [resp['name']],
-            role: [resp['role']],
-            empId: [resp['empId']],
-            gender: [resp['gender']],
-            date: [resp['date']],
-            blood: [resp['blood']],
-            email: [resp['email']],
-            mobile: [resp['mobile']],
-            age: [resp['age']],
-            password: [resp['password']],
-            CurrentAddress: [resp['CurrentAddress']],
+            name: resp['name'],
+            role: resp['role'],
+            empId:resp['empId'],
+            gender:resp['gender'],
+            date: resp['date'],
+            blood:resp['blood'],
+            email: resp['email'],
+            mobile:resp['mobile'],
+            age: resp['age'],
+            password: resp['password'],
+            CurrentAddress:resp['CurrentAddress'],
             PermanentAddress: [resp['PermanentAddress']],
             AddharNumber: [resp['AddharNumber']],
           });
@@ -187,7 +187,7 @@ export class UpdateEmpComponent {
       });
   }
   close() {
-    this.modelService.dismissAll();
+    this.routerNav.navigate(['dashboard/employee-list'])
   }
 
   copyAddress(event: any) {

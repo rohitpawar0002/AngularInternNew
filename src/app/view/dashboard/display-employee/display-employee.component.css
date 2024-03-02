@@ -17,6 +17,9 @@ th{
     color: #dddddd;
 
 }
+.heading{
+    margin-left: 25rem;     
+}
 
 .content-table th, 
 .content-table td{

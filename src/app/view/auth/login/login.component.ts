@@ -4,7 +4,6 @@ import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { HttpSignupService } from 'src/app/Services/http-signup.service';
 import { SidenavService } from 'src/app/Services/sidenav.service';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -39,7 +38,7 @@ name: any
         [
           Validators.required,
           Validators.pattern(
-            '(?=.*[a-z])(?=.*[A-Z])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{6,16}'
+            '(?=.*[a-z])(?=.*[A-Z])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{5,99}'
           ),
         ],
       ],
@@ -73,7 +72,7 @@ name: any
           this.sideNavService.user = user
           localStorage.setItem('user', 
           JSON.stringify(user))
-          alert('Login Successful');
+          alert("Login Successful!")
           this.loginForm.reset();
           this.router.navigate(['../../dashboard']);
         } else {

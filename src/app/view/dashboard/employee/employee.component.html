@@ -8,6 +8,7 @@
     <div class="row mt-4">
       <div class="col col-lg-4">
         <div data-mdb-input-init class="form-outline">
+          <span class="required" style="color: red">*</span>
           <input type="text" placeholder="Employee Name"  formControlName="name" [ngClass]="{'is-invalid':submitted && employeeForm.get('name')?.errors}" class="form-control" />
           <div *ngIf="submitted || employeeForm.get('name')?.invalid && (employeeForm.get('name')?.dirty || employeeForm.get('name')?.touched)">
             <div *ngIf="employeeForm.get('name')?.hasError('required')">
@@ -17,6 +18,7 @@
         </div>
       </div>
       <div class="col col-lg-4">
+        <span class="required" style="color: red">*</span>
         <select class="form-select" formControlName="role" [ngClass]="{'is-invalid':submitted && employeeForm.get('role')?.errors}" aria-label="Default select example">
             <option value="">Select Role</option>
             <option value="Junior Software Engineer">Junior Software Engineer</option>
@@ -30,6 +32,8 @@
       </div> 
        <div class="col col-lg-4">
         <div data-mdb-input-init class="form-outline">
+          <span class="required" style="color: red">*</span>
+
           <input type="text" formControlName="empId" [ngClass]="{'is-invalid':submitted && employeeForm.get('empId')?.errors}"  placeholder="Employee ID" class="form-control" />
           <div *ngIf="submitted || employeeForm.get('empId')?.invalid && (employeeForm.get('empId')?.dirty || employeeForm.get('empId')?.touched)">
             <div *ngIf="employeeForm.get('empId')?.hasError('required')">
@@ -43,6 +47,8 @@
 
  <div class="row mt-4">
      <div class="col col-lg-4">
+      <span class="required" style="color: red">*</span>
+
     <div class="d-flex">
           <!-- check radio male -->
  <div class="form-check mx-1">
@@ -63,6 +69,8 @@
 </div>
         </div>
         <div class="col col-lg-4">
+          <span class="required" style="color: red">*</span>
+
           <input type="date" formControlName="date" [ngClass]="{'is-invalid':submitted && employeeForm.get('date')?.errors}" class="form-control" >
           <div *ngIf="submitted || employeeForm.get('date')?.invalid && (employeeForm.get('date')?.dirty || employeeForm.get('date')?.touched)">
             <div *ngIf="employeeForm.get('date')?.hasError('required')"> 
@@ -74,6 +82,8 @@
 
          <div class="col col-lg-4">
           <div data-mdb-input-init class="form-outline">
+            <span class="required" style="color: red">*</span>
+
             <input type="number" formControlName="age" [ngClass]="{'is-invalid':submitted && employeeForm.get('age')?.errors}" id="form3Example2" placeholder="Age" class="form-control" />
             <div *ngIf="submitted || employeeForm.get('age')?.invalid && (employeeForm.get('age')?.dirty || employeeForm.get('age')?.touched)">
                 <div *ngIf="employeeForm.get('age')?.hasError('required')"> 
@@ -196,17 +206,13 @@
        <div class="row mt-4">
         <div class="col col-lg-4">
       <div data-mdb-input-init class="form-outline mb-4">
-        <input type="number"  [ngClass]="{'is-invalid':submitted && employeeForm.get('AddharNumber')?.errors}"  formControlName="AddharNumber" placeholder="Addhar Number" class="form-control" />
-        <div *ngIf="submitted || employeeForm.get('AddharNumber')?.invalid && (employeeForm.get('AddharNumber')?.dirty || employeeForm.get('AddharNumber')?.touched)">
-          <div *ngIf="employeeForm.get('AddharNumber')?.hasError('required')"> 
-                <!-- <p class="text-danger">Enter Addhar Number</p> -->
-             </div>
-          </div>
+        <input type="number"  formControlName="AddharNumber" placeholder="Addhar Number" class="form-control" />
+        
       </div>
         </div>
 
         <div class="col col-lg-4">
-    <input type="file" formControlName="file"  [ngClass]="{'is-invalid':submitted && employeeForm.get('file')?.errors}" class="form-control" id="customFile" />
+    <input type="file" formControlName="file" class="form-control" id="customFile" />
         </div>
       </div>
           

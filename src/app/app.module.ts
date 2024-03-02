@@ -12,6 +12,7 @@ import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-l
 import { HeaderComponent } from './layouts/dashboard-layout/header/header.component';
 import { SideNavComponent } from './layouts/dashboard-layout/side-nav/side-nav.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,7 @@ import { SideNavComponent } from './layouts/dashboard-layout/side-nav/side-nav.c
     ReactiveFormsModule,
     FontAwesomeModule,
     HttpClientModule ,
-    NgbDropdownModule
+    NgbDropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

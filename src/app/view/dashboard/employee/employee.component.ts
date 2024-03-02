@@ -48,8 +48,8 @@ export class EmployeeComponent {
       country: ['', Validators.required],
       state: ['', Validators.required],
       city: ['', Validators.required],
-      AddharNumber: ['', Validators.required],
-      file: ['', Validators.required],
+      AddharNumber: ['',],
+      file: ['',],
     });
 
     this.Country();
