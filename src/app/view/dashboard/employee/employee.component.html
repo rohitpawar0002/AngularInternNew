@@ -8,7 +8,6 @@
     <div class="row mt-4">
       <div class="col col-lg-4">
         <div data-mdb-input-init class="form-outline">
-          <span class="required" style="color: red">*</span>
           <input type="text" placeholder="Employee Name"  formControlName="name" [ngClass]="{'is-invalid':submitted && employeeForm.get('name')?.errors}" class="form-control" />
           <div *ngIf="submitted || employeeForm.get('name')?.invalid && (employeeForm.get('name')?.dirty || employeeForm.get('name')?.touched)">
             <div *ngIf="employeeForm.get('name')?.hasError('required')">
@@ -18,7 +17,6 @@
         </div>
       </div>
       <div class="col col-lg-4">
-        <span class="required" style="color: red">*</span>
         <select class="form-select" formControlName="role" [ngClass]="{'is-invalid':submitted && employeeForm.get('role')?.errors}" aria-label="Default select example">
             <option value="">Select Role</option>
             <option value="Junior Software Engineer">Junior Software Engineer</option>
@@ -32,7 +30,6 @@
       </div> 
        <div class="col col-lg-4">
         <div data-mdb-input-init class="form-outline">
-          <span class="required" style="color: red">*</span>
 
           <input type="text" formControlName="empId" [ngClass]="{'is-invalid':submitted && employeeForm.get('empId')?.errors}"  placeholder="Employee ID" class="form-control" />
           <div *ngIf="submitted || employeeForm.get('empId')?.invalid && (employeeForm.get('empId')?.dirty || employeeForm.get('empId')?.touched)">
@@ -47,7 +44,6 @@
 
  <div class="row mt-4">
      <div class="col col-lg-4">
-      <span class="required" style="color: red">*</span>
 
     <div class="d-flex">
           <!-- check radio male -->
@@ -69,7 +65,6 @@
 </div>
         </div>
         <div class="col col-lg-4">
-          <span class="required" style="color: red">*</span>
 
           <input type="date" formControlName="date" [ngClass]="{'is-invalid':submitted && employeeForm.get('date')?.errors}" class="form-control" >
           <div *ngIf="submitted || employeeForm.get('date')?.invalid && (employeeForm.get('date')?.dirty || employeeForm.get('date')?.touched)">
