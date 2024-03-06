@@ -102,12 +102,15 @@ MustMatch(password: string, confirmPass: string) {
     // console.log(this.register.value);
 
       this.signUpService.addSignup(this.register.value).subscribe({
-      next:(resp:any)=>{
-        console.log(resp);
+      next:(res:any)=>{
+        console.log(res);
+        if(res.Success==true){
+          alert('Signup Successful')
+          this.register.reset();
+          this.router.navigate([''])
+        }
+      
         
-        alert('Signup Successful')
-        this.register.reset();
-        this.router.navigate([''])
       },
       error:(err:any)=>{
         console.log(err);

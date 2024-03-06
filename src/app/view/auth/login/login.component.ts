@@ -37,9 +37,9 @@ name: any
         '',
         [
           Validators.required,
-          Validators.pattern(
-            '(?=.*[a-z])(?=.*[A-Z])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{5,99}'
-          ),
+          // Validators.pattern(
+          //   '(?=.*[a-z])(?=.*[A-Z])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{5,99}'
+          // ),
         ],
       ],
     });
@@ -58,30 +58,20 @@ name: any
       return;
     }
 
-    this.signUpService.getSignup().subscribe({
-      next: (resp: any) => {
-        const user = resp.find((a: any) => {
-          
-          // this.name= a.name
-          
-          return a.email === this.loginForm.value.email &&
-            a.password === this.loginForm.value.password
+    this.signUpService.getSignup(this.loginForm.value).subscribe((res:any)=>{
+      if (res.Success==true) {
+        this.sideNavService.user = res
+        localStorage.setItem('user',JSON.stringify(res))
+        alert("Login Successful!")
+        this.loginForm.reset();
+        this.router.navigate(['../../dashboard']);
+      } else if(res.Success==false){
+        alert('User Not Found');
+      }
+    })
+  
      
-        });
-        if (user) {
-          this.sideNavService.user = user
-          localStorage.setItem('user', 
-          JSON.stringify(user))
-          alert("Login Successful!")
-          this.loginForm.reset();
-          this.router.navigate(['../../dashboard']);
-        } else {
-          alert('User Not Found');
-        }
-      },
-      error: (err) => {
-        alert('Something Was Wrong');
-      },
-    });
+    
   }
 }
+

@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class HttpEmployeeService {
 
+  
+
   constructor(private http:HttpClient) { }
 
 Addemp(data:any)
