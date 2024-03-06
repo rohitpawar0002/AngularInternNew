@@ -25,8 +25,8 @@ export class DisplayEmployeeComponent {
    }
 
   getEmployee() {
-    this.employeeService.Getemp().subscribe((resp: any) => {
-      this.displayTableArray = resp;
+    this.employeeService.Getemp('employee').subscribe((resp: any) => {
+      this.displayTableArray = resp.userList;
       console.log('Display component', this.displayTableArray);
       // alert('Display Successfully!')
     });

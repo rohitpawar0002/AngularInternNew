@@ -109,6 +109,9 @@ MustMatch(password: string, confirmPass: string) {
           this.register.reset();
           this.router.navigate([''])
         }
+        else if(res.Success==false){
+          alert("Email Already Exists. please change the email")
+        }
       
         
       },

@@ -18,10 +18,10 @@ export class HttpSignupService {
   }
   
   addSignup(data:any){
-    return this.http.post('http://localhost:8080/api/getRegisterCre/register',data,this.httpOptions);
+        return this.http.post('http://localhost:8080/api/auth/register',data,this.httpOptions);
   }
   getSignup(data:any){
-    return this.http.get('http://localhost:8080/api/getLoginCre/login?username=' +data.email  +"&password=" + data.password,this.httpOptions );
+    return this.http.get('http://localhost:8080/api/auth/login?username=' +data.email  +"&password=" + data.password,this.httpOptions );
   }
 
 }

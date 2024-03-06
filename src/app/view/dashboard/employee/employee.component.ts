@@ -107,7 +107,7 @@ export class EmployeeComponent {
       state: this.selectedState
     });
     console.log(this.employeeForm.value);
-    this.employeService.Addemp(this.employeeForm.value).subscribe({
+    this.employeService.Addemp('addemployee',this.employeeForm.value).subscribe({
       next: (resp: any) => {
         this.displayArr = resp;
         alert('Employee Added');
