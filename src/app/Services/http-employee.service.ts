@@ -16,9 +16,10 @@ export class HttpEmployeeService {
     })
   }
   baseURL = 'http://localhost:8080/api/';
-  Addemp(data: any,api:string) {
+
+  Addemp(data: any,) {
     debugger
-    return this.http.post(this.baseURL+api, data,this.httpOptions);
+        return this.http.post('http://localhost:8080/api/employee/addemployee', data,this.httpOptions);
   }
 
   Getemp(api:string,) {

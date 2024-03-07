@@ -107,14 +107,18 @@ export class EmployeeComponent {
       state: this.selectedState
     });
     console.log(this.employeeForm.value);
-    this.employeService.Addemp('addemployee',this.employeeForm.value).subscribe({
+    this.employeService.Addemp(this.employeeForm.value).subscribe({
       next: (resp: any) => {
         this.displayArr = resp;
-        alert('Employee Added');
-        console.log('disssssss',this.displayArr);
-
-        this.employeeForm.reset();
-        this.close();
+        if(resp.Success==true){
+          alert('Employee Added');
+          console.log('disssssss',this.displayArr);  
+          this.employeeForm.reset();
+          this.close();
+        }else if(resp.Success==false){
+          alert('Something Went Wrong');
+        }
+     
       },
       error: (err: any) => {
         console.log(err);
