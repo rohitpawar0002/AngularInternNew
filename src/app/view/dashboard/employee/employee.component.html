@@ -1,11 +1,11 @@
-<div class="container">
-   <div class="modal-header mt-n1 ">
+<div class="container mt-1">
+   <div class="modal-header ">
     <h3>Add Employee</h3>
   </div>
-  <div class="modal-body mt-n2"> 
+  <div class="modal-body"> 
 <form [formGroup]="employeeForm" (ngSubmit)="onSubmit($event)">
     <!-- 2 column grid layout with text inputs for the first and last names -->
-    <div class="row mt-4">
+    <div class="row">
       <div class="col col-lg-4">
         <div data-mdb-input-init class="form-outline">
           <input type="text" placeholder="Employee Name"  formControlName="name" [ngClass]="{'is-invalid':submitted && employeeForm.get('name')?.errors}" class="form-control" />
@@ -77,8 +77,6 @@
 
          <div class="col col-lg-4">
           <div data-mdb-input-init class="form-outline">
-            <span class="required" style="color: red">*</span>
-
             <input type="number" formControlName="age" [ngClass]="{'is-invalid':submitted && employeeForm.get('age')?.errors}" id="form3Example2" placeholder="Age" class="form-control" />
             <div *ngIf="submitted || employeeForm.get('age')?.invalid && (employeeForm.get('age')?.dirty || employeeForm.get('age')?.touched)">
                 <div *ngIf="employeeForm.get('age')?.hasError('required')"> 
@@ -214,7 +212,7 @@
   
     <!-- Submit button -->
      <div class="modal-footer">
-    <button type="submit" class="btn btn-outline-info mb-4">Add Employee</button>
+    <button type="submit" class="btn btn-outline-primary mb-4">Add Employee</button>
     <button type="button" class="btn btn-outline-danger mb-4 mx-2" (click)="close()">Close</button>
     </div>
   
