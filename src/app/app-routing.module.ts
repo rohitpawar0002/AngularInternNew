@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
+import { authGaurdGuard } from './view/auth/auth-guard.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'auth', pathMatch: 'full' },
@@ -11,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardLayoutComponent,
+    component: DashboardLayoutComponent, canActivate:[authGaurdGuard],
   children: [
       {
         path: '',
