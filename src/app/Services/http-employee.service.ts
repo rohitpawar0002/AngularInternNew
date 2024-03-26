@@ -32,6 +32,6 @@ export class HttpEmployeeService {
     return this.http.put(`http://localhost:3000/employee/${id}`, data);
   }
   deleteEmployeData(id: any) {
-    return this.http.delete(`http://localhost:8080/api/employee/delete${id}`);
+    return this.http.delete(`http://localhost:8080/api/employee/delete/${id}`,this.httpOptions);
   }
 }

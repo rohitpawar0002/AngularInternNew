@@ -50,7 +50,7 @@
             <!-- <td>{{ item.file }}</td> -->
             <td class="d-flex">
               <button class="btn btn-sm btn-primary"  routerLink="../edit/{{item.id}}" (click)="onEdit(item.id)">Edit</button>
-              <button class="btn btn-sm btn-danger mx-2" (click)="Ondelete($event,item.id)">Delete</button>
+              <button class="btn btn-sm btn-danger mx-2" (click)="Ondelete($event,item.PK_EmpId)">Delete</button>
 
             </td>
           </tr>

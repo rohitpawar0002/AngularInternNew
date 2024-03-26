@@ -48,6 +48,8 @@ export class DisplayEmployeeComponent {
       event.target.innerText="Deleting...";
       this.employeeService.deleteEmployeData(id).subscribe({
         next:((resp:any)=>{
+          console.log('Delitting',resp);
+          
           this.getEmployee();
         })
       })
