@@ -71,21 +71,21 @@ export class UpdateEmpComponent {
       .getemployeById(this.router.snapshot.params['id'])
       .subscribe({
         next: (resp: any) => {
-          this.employee = resp;
+          this.employee = resp.data;
           this.updateemployeForm.patchValue({
-            name: resp['name'],
-            role: resp['role'],
-            empId:resp['empId'],
-            gender:resp['gender'],
-            date: resp['date'],
-            blood:resp['blood'],
-            email: resp['email'],
-            mobile:resp['mobile'],
-            age: resp['age'],
-            password: resp['password'],
-            CurrentAddress:resp['CurrentAddress'],
-            PermanentAddress: [resp['PermanentAddress']],
-            AddharNumber: [resp['AddharNumber']],
+            name: this.employee['EmpName'],
+            role: this.employee['EmpRole'],
+            empId:this.employee['EmpId'],
+            gender:this.employee['Gender'],
+            date: this.employee['Birth_Date'],
+            blood:this.employee['Blood_Group'],
+            email: this.employee['Email'],
+            mobile:this.employee['Mobile'],
+            age: this.employee['Age'],
+            password: this.employee['Password'],
+            CurrentAddress:this.employee['Current_Address'],
+            PermanentAddress: [this.employee['Permanent_Address']],
+            AddharNumber: [this.employee['Addhar_Number']],
           });
           this.Country();
         },
